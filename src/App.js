@@ -1,11 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./css/App.css";
 
 //components
 import Detail from "./pages/Detail";
 import Post from "./pages/Post";
 import Header from "./components/Header";
+
+//style
+import "./css/App.css";
 
 function App() {
   return (

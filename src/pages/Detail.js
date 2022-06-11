@@ -1,5 +1,8 @@
 import React from "react";
+
+//style
 import "../css/pages_css/Detail.css";
+
 const Detail = () => {
   return (
     <div className="detail">
