@@ -6,7 +6,7 @@ const Signup = () =>{
     // 리액트 훅
     let navigate = useNavigate();
 
-    
+
     // Ref로 요소 잡아준 것들
     const id_ref = React.useRef(null)
     const pw_ref = React.useRef(null)
@@ -22,10 +22,10 @@ const Signup = () =>{
             "password_confirm": pwcheck_ref.current.value,
             "nickname": nick_ref.current.value
           }).then((response)=>{
-            alert(response.data)    // 회원가입 완료  
+            alert(response.data.message)    // 회원가입 완료  
             navigate('/Login')
           }).catch((response)=>{
-            alert(response.response.data.errorMessage)  // 해당 오류 메세지 생성
+            alert(response.response.data.message)  // 해당 오류 메세지 생성
           })
     }
 
