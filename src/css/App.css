@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Cafe24SsurroundAir";
+}
+
+body {
+  background-color: lavender;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 3px 7px -3px;
+  background-color: snow;
+}
+
+button {
+  cursor: pointer;
+  background-color: lavenderblush;
+  border-radius: 10px;
+  color: brown;
+  transition: all 0.3s ease-in-out;
+  width: 100px;
+  height: 50px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: brown;
+  color: lavenderblush;
+  font-size: 20px;
+}
+
+button:active {
+  background-color: coral;
+}
