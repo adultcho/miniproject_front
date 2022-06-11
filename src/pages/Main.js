@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import '../Style/Login.css';
+import Header from './Header';
+import Card from './Card';
 
 
 const Main = () =>{
-    return(
+    let navigate = useNavigate();
+    return( 
+        <>
+        <Header/>
         <div className="Main_catagoryBar">
             <div className="Main_btn">
                 <button>전체</button>
@@ -10,12 +17,14 @@ const Main = () =>{
                 <button>노드</button>
                 <button>스프링</button>
                 <button>파이썬</button>
-                <button>게시글 작성</button>
+                <button onClick={()=>{navigate('./Post')}}>게시글 작성</button>
             </div>
 
         <div className="Card_container">
+            <Card/>
         </div>
         </div>
+        </>
 
 
 

@@ -1,10 +1,8 @@
 import React from "react"
-import { useHistory } from "react-router-dom";
-import './Style/Login.css'
 
 
 const Login = () =>{
-    const history = useHistory();
+
 
 
 
@@ -23,7 +21,7 @@ const Login = () =>{
             </div>
 
             <div className="Login_button">
-            <button onClick={()=>{history.push('/Main')}}> 로그인</button>
+            <button> 로그인</button>
             <div className="Login_Signup">
             <a href="/Signup">Are you Join ? </a>
             </div>

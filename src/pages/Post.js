@@ -1,8 +1,12 @@
 import React from "react";
-import './Style/page.css'
+import Header from './Header';
+import '../Style/page.css'
 
 const Post = () => {
+
   return (
+    <>
+    <Header/>
     <form className="post">
         <fieldset className="post_stack">
             <legend>Select Stack</legend>
@@ -39,6 +43,7 @@ const Post = () => {
         <button className="post_btn_add">Add</button>
         </div>
     </form>
+    </>
   );
 };
 

@@ -1,4 +1,11 @@
-import { Switch, Route } from "react-router-dom";
+import {  Routes,Route } from "react-router-dom";
+import Main from './pages/Main';
+import Login from './pages/Login';
+import Detail from './pages/Detail';
+import Post from './pages/Post';
+import Card from './pages/Card';
+import Signup from './pages/Signup'
+
 
 
 
@@ -6,11 +13,13 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Switch>
-      <Route path="/" exact></Route>
-      <Route path="/Signup" exact></Route>
-      <Route path="/Main" exact></Route>
-      </Switch>
+      <Routes>
+    <Route path = "/" element = {<Main />}/>
+    <Route path = "/Login" element = {<Login/>}/>
+    <Route path = "/Detail" element = {<Detail />}/>
+    <Route path = "/Post" element = {<Post />}/>
+    <Route path = "/Signup" element = {<Signup />}/>
+      </Routes>
     </div>
   );
 }

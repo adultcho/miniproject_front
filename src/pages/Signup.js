@@ -1,8 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+
 
 const Signup = () =>{
-    const history = useHistory();
+
     return(
         <div className="Signup_container">
             <h1 className="Signup_h1"> 회원가입</h1>
@@ -18,7 +18,7 @@ const Signup = () =>{
             </div>
 
               <div className="Signup_btn">
-                  <button className="Signup_back" onClick={()=>{history.push('/')}}> 뒤로가기 </button>
+                  <button className="Signup_back"> 뒤로가기 </button>
                   <button className="Signup_Signup"> 회원가입 </button>
              </div>
 
