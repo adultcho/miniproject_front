@@ -9,7 +9,15 @@ import Card from './Card';
 const Main = () =>{
     let navigate = useNavigate();
 
-    
+    // axios
+    //   .get("http://localhost:5001/poststudy") // back-end server http://13.125.151.93
+    //   .then((response) => {
+    //     console.log(response);
+    //     navigate("/");
+    //   })
+    //   .catch((response) => {
+    //     console.log(response);
+    //   });
     return( 
         <>
         <Header/>
