@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import '../Style/Login.css';
@@ -9,23 +10,16 @@ import axios from "axios";
 const Main = () =>{
     let navigate = useNavigate();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    axios
+      .get("http://localhost:5001/poststudy") // back-end server http://13.125.151.93
+      .then((response) => {
+        console.log(response);
+        
+        navigate("/");
+      })
+      .catch((response) => {
+        console.log(response);
+      });
     return( 
         <>
         <Header/>
@@ -68,5 +62,6 @@ const Main = () =>{
 
     )
 }
+
 
 export default Main;

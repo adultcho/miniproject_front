@@ -3,7 +3,9 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
 import Post from './pages/Post';
+
 import Card from './pages/Card';
+
 import Signup from './pages/Signup'
 
 

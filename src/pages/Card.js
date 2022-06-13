@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const Card = () =>{
@@ -9,5 +10,6 @@ const Card = () =>{
         </div>
     )
 }
+
 
 export default Card;
