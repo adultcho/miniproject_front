@@ -1,21 +1,23 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import {  Routes,Route } from "react-router-dom";
+import Main from './pages/Main';
+import Login from './pages/Login';
+import Detail from './pages/Detail';
+import Post from './pages/Post';
+import Signup from './pages/Signup'
 
-//components
-import Detail from "./pages/Detail";
-import Post from "./pages/Post";
-import Header from "./components/Header";
 
-//style
-import "./css/App.css";
+
+
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
-        <Route path="/detail" exact element={<Detail />} />
-        <Route path="/post" exact element={<Post />} />
+    <Route path = "/" element = {<Main />}/>
+    <Route path = "/Login" element = {<Login/>}/>
+    <Route path = "/Detail" element = {<Detail />}/>
+    <Route path = "/Post" element = {<Post />}/>
+    <Route path = "/Signup" element = {<Signup />}/>
       </Routes>
     </div>
   );
