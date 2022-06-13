@@ -3,10 +3,29 @@ import { useNavigate } from "react-router-dom";
 import '../Style/Login.css';
 import Header from './Header';
 import Card from './Card';
+import axios from "axios";
 
 
 const Main = () =>{
     let navigate = useNavigate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return( 
         <>
         <Header/>

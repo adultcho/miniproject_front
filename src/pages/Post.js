@@ -4,6 +4,10 @@ import '../Style/page.css'
 
 const Post = () => {
 
+
+
+
+
   return (
     <>
     <Header/>

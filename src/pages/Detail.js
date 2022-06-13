@@ -1,6 +1,21 @@
 import React from "react";
+import axios from "axios";
+import Comment from "./Comment";
+
 
 const Detail = () => {
+
+  const comment_ref = React.useRef(null)
+
+  const AddComment = () =>{
+    axios.post('http://localhost:5001/data',{
+      "commentContent" : comment_ref.current.value
+    }) 
+    console.log(comment_ref.current.value)
+  }
+
+
+
   return (
     <div className="detail">
       <div className="detail_category">
@@ -18,14 +33,12 @@ const Detail = () => {
       <div className="detail_comment">
         <h3>Comment List</h3>
         <div className="detail_comment_list">
-          <p>comment1</p>
-          <p>comment2</p>
-          <p>comment3</p>
+        <Comment/>
         </div>
         <h3>Comment</h3>
         <form className="detail_comment_input">
-          <input type='text' className="Post_input"/>
-          <button className="detail_comment_button">Add</button>
+          <input type='text' className="Post_input" ref={comment_ref}/>
+          <button className="detail_comment_button" onClick={AddComment}>Add</button>
         </form>
       </div>
     </div>
