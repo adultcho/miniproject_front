@@ -35,6 +35,8 @@ const Post = () => {
       setCategory(e.target.value);
     }
   };
+  
+  //page 로드할 때 axios get 요청
   React.useEffect(() => {
     axios
       .get("http://localhost:5001/poststudy") // back-end server http://13.125.151.93
