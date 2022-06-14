@@ -6,12 +6,6 @@ import Card from "./Card";
 import axios from "axios";
 
 const Main = () => {
-  let navigate = useNavigate();
-
-
-
-
-const Main = () => {
   const [state, setState] = React.useState([]);
   let navigate = useNavigate();
   React.useEffect(() => {
@@ -60,5 +54,6 @@ const Main = () => {
     </>
   );
 };
+
 
 export default Main;

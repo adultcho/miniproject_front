@@ -37,6 +37,10 @@ const Post = () => {
   };
 
 
+
+
+
+
   //page 로드할 때 axios get 요청
   React.useEffect(() => {
     axios

@@ -26,8 +26,8 @@ const Header = () =>{
 
             {!localStoragetokenCheck ?
             <div>
-            <button onClick={()=>{navigate('./Login')}} >로그인</button>
-            <button onClick={()=>{navigate('./Signup')}}>회원가입</button>
+            <button onClick={()=>{navigate('/Login')}} >로그인</button>
+            <button onClick={()=>{navigate('/Signup')}}>회원가입</button>
             </div> 
 
              :
