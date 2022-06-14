@@ -4,15 +4,18 @@ import "../Style/Login.css";
 import Header from "./Header";
 import Card from "./Card";
 import axios from "axios";
+import Detail from "./Detail";
 
 const Main = () => {
   const [state, setState] = React.useState([]);
   let navigate = useNavigate();
 
   React.useEffect(() => {
-     axios
+
+    axios
       .get("http://13.125.151.93/") // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
+        console.log(response)
         setState(response.data);
         console.log(response.data);
       })
@@ -20,10 +23,15 @@ const Main = () => {
         console.log(response);
       });
   }, []);
+
   // console.log(typeof(state))
+
+
+
+
   return (
-    <>
-      <Header />
+    <>   
+      <Header state ={state}/>
       <div className="Main_catagoryBar">
         <div className="Main_btn">
           <button>전체</button>

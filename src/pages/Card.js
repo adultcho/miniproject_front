@@ -3,9 +3,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
+
 const Card = (props) => {
   const navigate = useNavigate();
   let detail_url = "/Detail/" + props.studyId;
+
 
   const cardClickHandler = () => {
     navigate(detail_url);
