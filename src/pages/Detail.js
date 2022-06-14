@@ -9,24 +9,15 @@ const Detail = () => {
 
   const [comment, setComment] = React.useState([]);
   const comment_ref = React.useRef(null);
-  const [text,setText] = React.useState([]);
 
-  React.useEffect(()=>{
-    axios.get("http://localhost:5001/sleep_times")
-    .then(res =>{
-      setText(res.data);
-      let data = res.data;
-      data.reverse()
-    });
-  },[])
 
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:5001/postcomment") // back-end server http://13.125.151.93/api/poststudy
+      .get('http://13.125.151.93/api/getstudy/1') // back-end server /{studyid}
       .then((response) => {
         setComment(response.data);
-        console.log(response.data);
+        console.log(response);
         response.data.reverse()
       })
       .catch((response) => {
@@ -36,16 +27,18 @@ const Detail = () => {
 
   const commentSubmitHandler = (e) => {
     e.preventDefault();
-    window.location.reload()
+    // window.location.reload()
 
 
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
     console.log(comment_data);
+    const token = localStorage.getItem("refresh-token");
 
     axios
-      .post("http://localhost:5001/sleep_times", comment_data) // back-end server http://13.125.151.93
+      .post("http://13.125.151.93/api/postcomment/1", comment_data, {
+        headers: { Authorization: `${token}` }}) // back-end server http://13.125.151.93
       .then((response) => {
         console.log(response.data);
       })
@@ -57,6 +50,8 @@ const Detail = () => {
 
 
 
+
+
  
 
   return (
@@ -64,7 +59,7 @@ const Detail = () => {
       <Header />
       <div className="detail">
         <div className="detail_category">
-          <span>React</span>
+          <span></span>
         </div>
 
         <div className="detail_title">
@@ -78,11 +73,13 @@ const Detail = () => {
           <h3>Comment List</h3>
           {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
-            {comment.map((comment, idx) => (
-              <Comment key={idx}comment={comment.commentContent} />
-            ))}
+            {/* {comment.map((comment, idx) => ( */}
+              <Comment  comment={comment} />
+            {/* ))} */}
           </div>
         </div>
+
+        <div className="position">
         <h3>Comment</h3>
         <form onSubmit={commentSubmitHandler} className="detail_comment_input">
           <input ref={comment_ref} type="text" className="Post_input" />
@@ -90,6 +87,8 @@ const Detail = () => {
             Add
           </button>
         </form>
+        </div>
+
       </div>
     </>
   );
