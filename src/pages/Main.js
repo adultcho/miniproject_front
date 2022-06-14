@@ -5,6 +5,9 @@ import Header from "./Header";
 import Card from "./Card";
 import axios from "axios";
 
+const Main = () => {
+  let navigate = useNavigate();
+
 
 
 
@@ -42,6 +45,7 @@ const Main = () => {
         </div>
 
         <div className="Card_container">
+
           {state.map((state, id)=>(
             <Card
             key={id}

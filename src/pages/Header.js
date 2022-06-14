@@ -1,19 +1,44 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import '../Style/Login.css'
+
 
 const Header = () =>{
     let navigate = useNavigate();
+    
+    const localStoragetokenCheck = localStorage.getItem('refresh-token');
+
+    const Logout = ()=>{
+        localStorage.removeItem('refresh-token')
+        navigate('/')
+        alert('로그아웃 되셨습니다')
+    }
+
+
+
+
     return(
-        <>
+        
         <div className="nav">
-            <h1> 개발자 스터디</h1>
+            <h1 className="header_title"> 모이소 </h1>
             <div className="Header_btn">
-            <button onClick={()=>{navigate('/Signup')}}><strong>회원가입</strong></button>
-            <button onClick={()=>{navigate('/Login')}}><strong>로그인</strong></button>
+
+            {!localStoragetokenCheck ?
+            <div>
+            <button onClick={()=>{navigate('./Login')}} >로그인</button>
+            <button onClick={()=>{navigate('./Signup')}}>회원가입</button>
+            </div> 
+
+             :
+
+            <div>
+            <button onClick={()=>{navigate('./Signup')}}>회원가입</button>
+            <button onClick={Logout}>로그아웃</button>
+            </div>}
+
             </div>
         </div>
-        </>
     )
 }
 

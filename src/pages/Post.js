@@ -36,6 +36,7 @@ const Post = () => {
     }
   };
 
+
   //page 로드할 때 axios get 요청
   React.useEffect(() => {
     axios
@@ -58,6 +59,7 @@ const Post = () => {
       studyTitle: title_ref.current.value,
       studyContent: content_ref.current.value,
     };
+
     const token = localStorage.getItem("refresh-token");
     console.log(token);
     await axios
@@ -66,9 +68,10 @@ const Post = () => {
       }) // back-end server http://13.125.151.93
       .then((response) => {
         console.log(response);
+
       })
-      .catch((response) => {
-        console.log(response);
+      .catch((error) => {
+        console.log(error);
       });
   };
 

@@ -1,5 +1,5 @@
-
 import React from "react";
+
 
 const Card = (props) =>{
     console.log(props)
@@ -14,3 +14,4 @@ const Card = (props) =>{
 
 
 export default Card;
+
