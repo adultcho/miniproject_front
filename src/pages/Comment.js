@@ -17,7 +17,7 @@ const Comment = (props) => {
     let put_comment = { commentContent: New_comment };
     console.log(put_comment);
     await axios
-      .put("http://13.125.151.93/api/putcomment/1", put_comment, {
+      .put("http://13.125.151.93/api/putcomment/2", put_comment, {
         headers: { Authorization: `${token}` },
       })
       .then((response) => {
@@ -51,7 +51,7 @@ const Comment = (props) => {
         <p>유저 이메일 : {props.username}</p>
       </div>
       <div className="C_title">
-        {props.commentContent}
+        {props.comment}
         {userName === now_user ? (
           <div>
             <button className="bt_insert" onClick={insert_comment}>
