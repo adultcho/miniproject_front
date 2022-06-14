@@ -297,10 +297,12 @@ input::-webkit-input-placeholder { color: black; padding: 10px; font-weight:700;
     position: fixed;
 }
 
-.Header_btn > button {
+.Header_btn > div > button {
     margin-right: 20px;
     width:100px;
     height: 30px;
+    font-family: 'SuncheonB';
+    font-weight: 700;
     border-radius: 10px;
     color: white;
     background-color: #ff94c2;
@@ -308,9 +310,9 @@ input::-webkit-input-placeholder { color: black; padding: 10px; font-weight:700;
 }
 
 
-.Header_btn > button:hover{
-    transform: scale(1.20);
-    background-color: #ba68c8;
+.Header_btn > div > button:hover{
+    transform: scale(1.30);
+    background-color: #6a1b9a;
 }
 
 .Header_btn{
@@ -319,4 +321,9 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 }
+
+.header_title:first-letter {  
+    font-size: 50px; 
+    color:#7e57c2;
+}  
 

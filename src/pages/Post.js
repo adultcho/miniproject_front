@@ -35,18 +35,18 @@ const Post = () => {
       setCategory(e.target.value);
     }
   };
-  React.useEffect(() => {
-    axios
-      .get("http://localhost:5001/poststudy") // back-end server http://13.125.151.93
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((response) => {
-        console.log(response);
-      });
-  }, []);
+  // React.useEffect(() => {
+  //   axios
+  //     .get("http://13.125.151.93/") // back-end server http://13.125.151.93
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((response) => {
+  //       console.log(response);
+  //     });
+  // }, []);
 
-  //add button click => input data {key:value}로 불러옴 =>  axios.post로 서버에 전송 => main page로 이동
+  // add button click => input data {key:value}로 불러옴 =>  axios.post로 서버에 전송 => main page로 이동
   const postSubmitHandler = (e) => {
     e.preventDefault();
     const post_data = {
@@ -56,15 +56,16 @@ const Post = () => {
       studyContent: content_ref.current.value,
     };
 
+    console.log(post_data);
+
     axios
-      .post("http://localhost:5001/poststudy", post_data) // back-end server http://13.125.151.93
+      .post("http://13.125.151.93/api/poststudy", post_data) // back-end server http://13.125.151.93
       .then((response) => {
         console.log(response);
-
         navigate("/");
       })
-      .catch((response) => {
-        console.log(response);
+      .catch((error) => {
+        console.log(error);
       });
   };
 

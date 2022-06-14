@@ -1,33 +1,51 @@
-
 import React from "react";
 import Header from "./Header";
 import axios from "axios";
+import Comment from "./Comment"
+
 
 const Detail = () => {
+
   const [comment, setComment] = React.useState([]);
   const comment_ref = React.useRef(null);
+  const [text,setText] = React.useState([]);
+
+  React.useEffect(()=>{
+    axios.get("http://localhost:5001/sleep_times")
+    .then(res =>{
+      setText(res.data);
+      let data = res.data;
+      data.reverse()
+    });
+  },[])
+
 
   const commentSubmitHandler = (e) => {
     e.preventDefault();
+    window.location.reload()
 
-    setComment((prevComments) => {
-      return [comment_ref.current.value, ...prevComments];
-    });
+
+    // setComment((prevComments) => {
+    //   return [comment_ref.current.value, ...prevComments];
+    // });
 
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
-    console.log(comment_data);
 
     axios
-      .post("http://localhost:5001/postcomment", comment_data) // back-end server http://13.125.151.93
+      .post("http://localhost:5001/sleep_times", comment_data) // back-end server http://13.125.151.93
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
       })
       .catch((response) => {
         console.log(response);
       });
   };
+
+
+
+ 
 
   return (
     <>
@@ -47,23 +65,12 @@ const Detail = () => {
 
         <div className="detail_comment">
           <h3>Comment List</h3>
+          {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
-            {comment.map((comment, idx) => (
-              <>
-                <div className="detail_comment_list_information">
-                  <span>userNickname</span>
-                  <span>userName</span>
-                  <span>time</span>
-                </div>
-                <p key={idx}>
-                  {comment}
-                  <div className="detail_comment_list_modify">
-                    <button>수정</button>
-                    <button>삭제</button>
-                  </div>
-                </p>
-              </>
-            ))}
+
+          <Comment text={text}/>
+
+
           </div>
           <h3>Comment</h3>
           <form

@@ -1,11 +1,25 @@
 import React from "react";
 
-const Comment = () =>{
+
+const Comment = ({text}) =>{
+
+    console.log(text)
+  
+
     return(
-        <div className="detail_comment_list">
-          <p>comment1</p>
-        </div>
+      <div>
+        {text.map(text =>{
+          return (
+            <div key={text.id}>
+              <p>{text.commentContent}</p>
+            </div>
+
+          )
+        })}
+      </div>
+
     )
 }
+
 
 export default Comment ;
