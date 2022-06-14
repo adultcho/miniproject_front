@@ -35,20 +35,24 @@ const Post = () => {
       setCategory(e.target.value);
     }
   };
-  // React.useEffect(() => {
-  //   axios
-  //     .get("http://13.125.151.93/") // back-end server http://13.125.151.93
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((response) => {
-  //       console.log(response);
-  //     });
-  // }, []);
 
-  // add button click => input data {key:value}로 불러옴 =>  axios.post로 서버에 전송 => main page로 이동
-  const postSubmitHandler = (e) => {
+
+  //page 로드할 때 axios get 요청
+  React.useEffect(() => {
+    axios
+      .get("http://13.125.151.93/api/poststudy") // back-end server http://13.125.151.93
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((response) => {
+        console.log(response);
+      });
+  }, []);
+
+  //add button click => input data {key:value}로 불러옴 =>  axios.post로 서버에 전송 => main page로 이동
+  const postSubmitHandler = async (e) => {
     e.preventDefault();
+
     const post_data = {
       category,
       studyAddress: address_ref.current.value,
@@ -56,13 +60,15 @@ const Post = () => {
       studyContent: content_ref.current.value,
     };
 
-    console.log(post_data);
-
-    axios
-      .post("http://13.125.151.93/api/poststudy", post_data) // back-end server http://13.125.151.93
+    const token = localStorage.getItem("refresh-token");
+    console.log(token);
+    await axios
+      .post("http://13.125.151.93/api/poststudy", post_data, {
+        headers: { Authorization: `${token}` },
+      }) // back-end server http://13.125.151.93
       .then((response) => {
         console.log(response);
-        navigate("/");
+
       })
       .catch((error) => {
         console.log(error);

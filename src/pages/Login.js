@@ -15,8 +15,10 @@ const Login = () => {
         password: pw_ref.current.value,
       })
       .then((response) => {
+
         localStorage.setItem("refresh-token", response.headers.authorization);
         alert(response.data.message);
+
         console.log(response);
         navigate("/");
       })

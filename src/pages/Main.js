@@ -8,18 +8,23 @@ import axios from "axios";
 const Main = () => {
   let navigate = useNavigate();
 
- // 메인 페이지 GET 요청 !!
+
+
+
+const Main = () => {
+  const [state, setState] = React.useState([]);
+  let navigate = useNavigate();
   React.useEffect(() => {
     axios
-      .get("http://13.125.151.93/") // back-end server http://13.125.151.93
+      .get("http://13.125.151.93/api/poststudy") // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
-        console.log(response);
+        setState(response.data);
       })
       .catch((response) => {
         console.log(response);
-      });
+      })
   }, []);
-
+  console.log(state)
   return (
     <>
       <Header />
@@ -32,7 +37,7 @@ const Main = () => {
           <button>파이썬</button>
           <button
             onClick={() => {
-              navigate("./Post");
+              navigate("/Post");
             }}
           >
             게시글 작성
@@ -40,7 +45,16 @@ const Main = () => {
         </div>
 
         <div className="Card_container">
-          <Card />
+
+          {state.map((state, id)=>(
+            <Card
+            key={id}
+            category={state.category}
+            address ={state.studyAddress}
+            title = {state.studyTitle}
+            content={state.studyContent}
+            />
+          ))}
         </div>
       </div>
     </>
