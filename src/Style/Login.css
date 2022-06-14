@@ -327,3 +327,63 @@ align-items: center;
     color:#7e57c2;
 }  
 
+.comment-opt{
+    display: flex;
+}
+
+.C_wrap{
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+    background-color: #b2dfdb;
+    border-radius: 11px;
+    margin: 10px 0px 15px 0px;
+}
+
+.C_p{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.C_title{
+    text-align: left;
+    padding: 20px;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.C_title > div > button {
+    margin-left: 15px;
+    width:70px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.C_title > div > button:hover{
+    transform: scale(1.20);
+    cursor: pointer;
+}
+
+.position{
+    position: relative;
+    bottom: 40px;
+}
+
+.bt_insert{
+    background-color: #166cea;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    font-family: 'SuncheonB';
+}
+
+
+.bt_delete{
+    background-color: #ec407a;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    font-family: 'SuncheonB';
+}

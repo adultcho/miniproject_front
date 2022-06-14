@@ -144,6 +144,7 @@
 .detail_category {
   width: 50vw;
   font-size: 50px;
+  margin-top: 120px;
 }
 
 .detail_title {
@@ -175,12 +176,13 @@
 .detail_comment_list {
   display: flex;
   flex-direction: column;
-  overflow:scroll;
+  overflow-x :hidden; 
+  overflow-y :scroll; 
+
   width:50vw;
   min-height: 200px;
   max-height: 200px;
   border: 1px solid black;
-  border-radius: 20px;
   background-color: aliceblue;
   padding: 10px;
   margin-bottom: 40px;
@@ -188,11 +190,6 @@
   gap: 5px;
 }
 
-.detail_comment_list p {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid gray;
-}
 
 .detail_comment_list_information{
   display: flex;
