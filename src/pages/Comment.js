@@ -50,10 +50,12 @@ const Comment = (props) => {
 
 
   return (
+
     <div className="C_wrap">
       <div className="C_p">
         <p>유저 닉네임 :  {props.comment.userNickname}</p>
         <p>유저 이메일 :  {props.comment.username}</p>
+
       </div>
       <div className="C_title">
       {props.comment.commentContent} 

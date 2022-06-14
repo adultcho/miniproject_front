@@ -1,33 +1,45 @@
 import React from "react";
 import Header from "./Header";
 import axios from "axios";
-import Comment from "./Comment"
-
-
+import Comment from "./Comment";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
+  let { studyId } = useParams();
 
-  const [comment, setComment] = React.useState([]);
+
+  console.log(studyId);
+
+  
   const comment_ref = React.useRef(null);
+
+
+
+  const [list, setList] = React.useState([]);
 
 
 
   React.useEffect(() => {
     axios
-      .get('http://13.125.151.93/api/getstudy/1') // back-end server /{studyid}
+
+      .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
-        setComment(response.data);
         console.log(response);
-        response.data.reverse()
+        setList(response.data);
+        console.log(response);
+        response.data.reverse();
+
       })
       .catch((response) => {
         console.log(response);
       });
-  }, []);
+  }, [studyId]);
 
-  const commentSubmitHandler = (e) => {
+  const commentSubmitHandler = async (e) => {
     e.preventDefault();
+
     // window.location.reload()
+
 
 
     const comment_data = {
@@ -36,46 +48,65 @@ const Detail = () => {
     console.log(comment_data);
     const token = localStorage.getItem("refresh-token");
 
-    axios
-      .post("http://13.125.151.93/api/postcomment/1", comment_data, {
-        headers: { Authorization: `${token}` }}) // back-end server http://13.125.151.93
+
+    const token = localStorage.getItem("refresh-token");
+
+    await axios
+      .post("http://13.125.151.93/api/postcomment/" + studyId, comment_data,{
+        headers: { Authorization: `${token}` },
+      }) // back-end server http://13.125.151.93
+
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
       })
       .catch((response) => {
         console.log(response);
       });
-      
   };
 
+  console.log(list.commentList);
 
 
 
 
- 
+
+
+
 
   return (
     <>
       <Header />
       <div className="detail">
         <div className="detail_category">
-          <span></span>
+
+          <span>cc</span>
+
+
         </div>
 
         <div className="detail_title">
-          <p className="title">Title</p>
+          <p className="title">{list.studyTitle}</p>
         </div>
 
         <div className="detail_content">
-          <p className="content">Content</p>
+          <p className="content">{list.studyContent}</p>
         </div>
+
         <div className="detail_comment">
           <h3>Comment List</h3>
           {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
-            {/* {comment.map((comment, idx) => ( */}
-              <Comment  comment={comment} />
-            {/* ))} */}
+
+            {/* {list.commentList.map((list, idx) => ( */}
+              <Comment
+                // key={idx}
+                comment={list.commentContent}
+                userNickname={list.userNickname}
+                username={list.username}
+                createdAt={list.createdAt}
+              />
+              {/* ))} */}
+
           </div>
         </div>
 
