@@ -4,7 +4,6 @@ import "../Style/Login.css";
 import Header from "./Header";
 import Card from "./Card";
 import axios from "axios";
-import Detail from "./Detail";
 
 const Main = () => {
   const [state, setState] = React.useState([]);

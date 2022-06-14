@@ -49,8 +49,6 @@ const Detail = () => {
     const token = localStorage.getItem("refresh-token");
 
 
-    const token = localStorage.getItem("refresh-token");
-
     await axios
       .post("http://13.125.151.93/api/postcomment/" + studyId, comment_data,{
         headers: { Authorization: `${token}` },
