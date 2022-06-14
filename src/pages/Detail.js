@@ -7,20 +7,28 @@ import { useParams } from "react-router-dom";
 const Detail = () => {
   let { studyId } = useParams();
 
+
   console.log(studyId);
 
-  const [list, setList] = React.useState([]);
-  // const [list, setList] = React.useState([]);
+  
   const comment_ref = React.useRef(null);
+
+
+
+  const [list, setList] = React.useState([]);
+
+
 
   React.useEffect(() => {
     axios
+
       .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
         console.log(response);
         setList(response.data);
         console.log(response);
         response.data.reverse();
+
       })
       .catch((response) => {
         console.log(response);
@@ -29,12 +37,17 @@ const Detail = () => {
 
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
-    
+
+    // window.location.reload()
+
+
 
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
     console.log(comment_data);
+    const token = localStorage.getItem("refresh-token");
+
 
     const token = localStorage.getItem("refresh-token");
 
@@ -42,6 +55,7 @@ const Detail = () => {
       .post("http://13.125.151.93/api/postcomment/" + studyId, comment_data,{
         headers: { Authorization: `${token}` },
       }) // back-end server http://13.125.151.93
+
       .then((response) => {
         console.log(response);
       })
@@ -49,14 +63,25 @@ const Detail = () => {
         console.log(response);
       });
   };
+
   console.log(list.commentList);
+
+
+
+
+
+
+
 
   return (
     <>
       <Header />
       <div className="detail">
         <div className="detail_category">
+
           <span>cc</span>
+
+
         </div>
 
         <div className="detail_title">
@@ -71,6 +96,7 @@ const Detail = () => {
           <h3>Comment List</h3>
           {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
+
             {/* {list.commentList.map((list, idx) => ( */}
               <Comment
                 // key={idx}
@@ -80,8 +106,11 @@ const Detail = () => {
                 createdAt={list.createdAt}
               />
               {/* ))} */}
+
           </div>
         </div>
+
+        <div className="position">
         <h3>Comment</h3>
         <form onSubmit={commentSubmitHandler} className="detail_comment_input">
           <input ref={comment_ref} type="text" className="Post_input" />
@@ -89,6 +118,8 @@ const Detail = () => {
             Add
           </button>
         </form>
+        </div>
+
       </div>
     </>
   );

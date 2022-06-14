@@ -15,11 +15,9 @@ const Login = () => {
         password: pw_ref.current.value,
       })
       .then((response) => {
-
         localStorage.setItem("refresh-token", response.headers.authorization);
+        localStorage.setItem('user-name',id_ref.current.value);
         alert(response.data.message);
-
-        console.log(response);
         navigate("/");
       })
       .catch((error) => {
@@ -33,7 +31,7 @@ const Login = () => {
         <h1 className="Login_h1"> Login </h1>
         <div className="Login_two_container">
           <div className="Login_id">
-            <p>아이디 </p>{" "}
+            <p>아이디 </p>
             <input
               type="text"
               className="Login_input"

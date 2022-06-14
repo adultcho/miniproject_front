@@ -7,16 +7,14 @@ import '../Style/Login.css'
 const Header = () =>{
     let navigate = useNavigate();
     
-    const localStoragetokenCheck = localStorage.getItem('refresh-token');
+    const localStoragetokenCheck = localStorage.getItem('refresh-token');       
 
     const Logout = ()=>{
         localStorage.removeItem('refresh-token')
+        localStorage.removeItem('user-name')
         navigate('/')
         alert('로그아웃 되셨습니다')
     }
-
-
-
 
     return(
         
