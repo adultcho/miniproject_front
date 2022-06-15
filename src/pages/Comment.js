@@ -2,13 +2,15 @@ import axios from "axios";
 import React from "react";
 
 const Comment = (props) => {
-  console.log(props);
+  
 
   const userName = localStorage.getItem("user-name");
   const now_user = props.username;
   // const commentContent = props.comment.commentContent
 
   const token = localStorage.getItem("refresh-token");
+
+  console.log(props)
 
   // 댓글 수정판!!
   const insert_comment = async () => {
@@ -17,7 +19,7 @@ const Comment = (props) => {
     let put_comment = { commentContent: New_comment };
     console.log(put_comment);
     await axios
-      .put("http://13.125.151.93/api/putcomment/2", put_comment, {
+      .put("http://13.125.151.93/api/putcomment/" + props.commentId, put_comment, {
         headers: { Authorization: `${token}` },
       })
       .then((response) => {
@@ -26,14 +28,18 @@ const Comment = (props) => {
       .catch((err) => {
         console.log(err);
       });
-
-    alert("수정되었습니다");
-    // window.location.reload()
+      if(New_comment===null){
+        return(
+          alert("취소되었습니다.")
+            );
+        }
+      alert("수정되었습니다.")
+    window.location.reload()
   };
 
   const delete_comment = () => {
     axios
-      .delete("http://13.125.151.93/api/deletecomment/11", {
+      .delete("http://13.125.151.93/api/deletecomment/" + props.commentId, {
         headers: { Authorization: `${token}` },
       })
       .then((res) => {
@@ -41,7 +47,7 @@ const Comment = (props) => {
       });
 
     alert("삭제되었습니다");
-    // window.location.reload()
+    window.location.reload()
   };
 
   return (

@@ -24,6 +24,7 @@ const Detail = () => {
   //     })
   // }, []);
   // console.log(test);
+  
 
   React.useEffect(() => {
     axios
@@ -39,7 +40,7 @@ const Detail = () => {
       .catch((response) => {
         console.log(response);
       });
-  }, []);
+  }, [studyId]);
 
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
@@ -59,6 +60,7 @@ const Detail = () => {
 
       .then((response) => {
         console.log(response);
+        window.location.reload()
       })
       .catch((response) => {
         console.log(response);
@@ -72,7 +74,7 @@ const Detail = () => {
       <Header />
       <div className="detail">
         <div className="detail_category">
-          <span>cc</span>
+          <span>category</span>
         </div>
 
         <div className="detail_title">
@@ -91,6 +93,7 @@ const Detail = () => {
                 
               <Comment
                 key={idx}
+                commentId = {list.commentId}
                 comment={list.commentContent}
                 userNickname={list.userNickname}
                 username={list.username}

@@ -31,7 +31,6 @@ const Header = () =>{
              :
 
             <div>
-            <button onClick={()=>{navigate('./Signup')}}>회원가입</button>
             <button onClick={Logout}>로그아웃</button>
             </div>}
 

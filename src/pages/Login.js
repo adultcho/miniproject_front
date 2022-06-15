@@ -16,12 +16,14 @@ const Login = () => {
       })
       .then((response) => {
         localStorage.setItem("refresh-token", response.headers.authorization);
-        localStorage.setItem('user-name',id_ref.current.value);
+        localStorage.setItem("user-name", id_ref.current.value);
         alert(response.data.message);
         navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        alert(error.response.data.message);
+        id_ref.current.value = "";
+        pw_ref.current.value = "";
       });
   };
 
