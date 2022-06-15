@@ -12,30 +12,16 @@ const Detail = () => {
   const comment_ref = React.useRef(null);
 
   const [list, setList] = React.useState([]);
-  
-  // let test; React.useEffect(()=>{ try{ test = await axios.get( URL ) console.log( test ); } catch(e){ console.log( e ); } }, [])
-
-  // let test;
-  // React.useEffect(async () => {
-  //   test = await axios
-  //     .get("http://13.125.151.93/api/getstudy/" + studyId)
-  //     .then((res) => {
-  //       setList(res.data)
-  //     })
-  // }, []);
-  // console.log(test);
-  
 
   React.useEffect(() => {
     axios
-      .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/api/poststudy
+      .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/
       .then((response) => {
         setList(response.data);
 
         console.log(response);
-        console.log(response.data)
+        console.log(response.data);
         response.data.commentList.reverse();
-
       })
       .catch((response) => {
         console.log(response);
@@ -44,8 +30,6 @@ const Detail = () => {
 
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
-
-    // window.location.reload()
 
     const comment_data = {
       commentContent: comment_ref.current.value,
@@ -60,7 +44,7 @@ const Detail = () => {
 
       .then((response) => {
         console.log(response);
-        window.location.reload()
+        window.location.reload();
       })
       .catch((response) => {
         console.log(response);
@@ -89,23 +73,16 @@ const Detail = () => {
           <h3>Comment List</h3>
           {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
-            {list.commentList && list.commentList.map((list, idx) => (
-                
-              <Comment
-                key={idx}
-                commentId = {list.commentId}
-                comment={list.commentContent}
-                userNickname={list.userNickname}
-                username={list.username}
-            
-              />
-              
-                ))} 
-            {/* <Comment 
-            
-            comment={list.commentContent}
-            userNickname={list.userNickname}
-            username={list.username}/> */}
+            {list.commentList &&
+              list.commentList.map((list, idx) => (
+                <Comment
+                  key={idx}
+                  commentId={list.commentId}
+                  comment={list.commentContent}
+                  userNickname={list.userNickname}
+                  username={list.username}
+                />
+              ))}
           </div>
         </div>
 
