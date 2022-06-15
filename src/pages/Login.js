@@ -58,6 +58,7 @@ const Login = () => {
             <button onClick={LoginAxios}> 로그인</button>
             <div className="Login_Signup">
               <a href="/Signup">Are you Join ? </a>
+              <a href="https://kauth.kakao.com/oauth/authorize?client_id=346b2f15b0bcf829529a506449139680&redirect_uri=http://localhost:3000/user/kakao/callback&response_type=code" className="kakao">카카오 로그인하기</a>
             </div>
           </div>
         </div>

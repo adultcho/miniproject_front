@@ -25,7 +25,7 @@ const Post = () => {
   const [category, setCategory] = React.useState(null);
 
   //cancel button
-  const cancleHandler = () => {
+  const cancelHandler = () => {
     navigate("/");
   };
 
@@ -127,13 +127,27 @@ const Post = () => {
         </div>
 
         <div className="post_content">
+          <div className="Post_container">
           <h1>Content</h1>
-          <textarea className="Post_input" ref={content_ref} />
+          <h1> image</h1>
+          </div>
+
+        <div className="third-container">
+          
+            <textarea className="Post_input" ref={content_ref} />
+
+            <div>
+              <div className="imagebox">사진상자</div>
+              <div><input type="file"/></div>
+            </div>
+
+
+          </div>
         </div>
         <div className="post_btn">
           <button
             type="button"
-            onClick={cancleHandler}
+            onClick={cancelHandler}
             className="post_btn_cancel"
           >
             Cancel
