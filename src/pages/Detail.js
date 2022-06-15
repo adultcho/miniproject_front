@@ -75,7 +75,7 @@ const Detail = () => {
       <Header />
       <div className="detail">
         <div className="detail_category">
-          <span>category</span>
+          <span>{list.category}</span>
           <div className="Detail_btn">
             {userName === now_user ? (
               <div>
