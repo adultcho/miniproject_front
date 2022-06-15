@@ -20,7 +20,6 @@ const Main = () => {
       .catch((response) => {
         console.log(response);
       });
-
   }, []);
 
   const categoryAll = () => {
@@ -29,16 +28,11 @@ const Main = () => {
       .then((response) => {
         setState(response.data);
         console.log(response.data);
-
       })
       .catch((response) => {
         console.log(response);
       });
   };
-
-  
-
-
 
   const categoryReact = () => {
     axios
@@ -111,50 +105,70 @@ const Main = () => {
       <Header state={state} />
       <div className="Main">
         <div className="Main_btn">
-      
-          <button id="categoryBtnAll" className="Main_category_btn" onClick={categoryAll}>
+          <button
+            id="categoryBtnAll"
+            className="Main_category_btn"
+            onClick={categoryAll}
+          >
             All
           </button>
-          <button onClick={categoryReact} id="categoryBtnReact" className="Main_category_btn" name="react">
+          <button
+            onClick={categoryReact}
+            id="categoryBtnReact"
+            className="Main_category_btn"
+            name="react"
+          >
             React
           </button>
-          <button onClick={categoryNode} id="categoryBtnNode" className="Main_category_btn" name="node-js">
+          <button
+            onClick={categoryNode}
+            id="categoryBtnNode"
+            className="Main_category_btn"
+            name="node-js"
+          >
             Node-js
           </button>
-          <button onClick={categorySpring} id="categoryBtnSpring" className="Main_category_btn" name="spring">
+          <button
+            onClick={categorySpring}
+            id="categoryBtnSpring"
+            className="Main_category_btn"
+            name="spring"
+          >
             Spring
           </button>
-          <button onClick={categoryPython} id="categoryBtnPython" className="Main_category_btn" name="python">
+          <button
+            onClick={categoryPython}
+            id="categoryBtnPython"
+            className="Main_category_btn"
+            name="python"
+          >
             Python
           </button>
         </div>
-          <RiAddCircleFill
-            className="Main_post_btn"
-            type="button"
-            onClick={() => {
-              navigate("/Post");
-            }}
-          >
-            게시글 작성
-            </RiAddCircleFill>
-          
-          
-            <div className="Card_container">
-        {state.map((state, id) => (
-          <Card
-            key={id}
-            studyId={state.studyId}
-            category={state.category}
-            address={state.studyAddress}
-            title={state.studyTitle}
-            content={state.studyContent}
-            imageUrl={state.imageUrl}
-          />
-        ))}
+        <RiAddCircleFill
+          className="Main_post_btn"
+          type="button"
+          onClick={() => {
+            navigate("/Post");
+          }}
+        >
+          게시글 작성
+        </RiAddCircleFill>
+
+        <div className="Card_container">
+          {state.map((state, id) => (
+            <Card
+              key={id}
+              studyId={state.studyId}
+              category={state.category}
+              address={state.studyAddress}
+              title={state.studyTitle}
+              content={state.studyContent}
+              imageUrl={state.imageUrl}
+            />
+          ))}
         </div>
-      
       </div>
-      
     </>
   );
 };
