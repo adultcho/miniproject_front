@@ -32,6 +32,10 @@ const Signup = () =>{
           })
     }
 
+    const SignupCancel = () => {
+      navigate('/');
+    }
+
 
 
 
@@ -50,7 +54,7 @@ const Signup = () =>{
             </div>
 
               <div className="Signup_btn">
-                  <button className="Signup_back"> 뒤로가기 </button>
+                  <button className="Signup_back" onClick={SignupCancel}> 뒤로가기 </button>
                   <button className="Signup_Signup" onClick={SignupAxios}> 회원가입 </button>
              </div>
 
