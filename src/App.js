@@ -3,13 +3,19 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
 import Post from './pages/Post';
-import Signup from './pages/Signup'
+import Signup from './pages/Signup';
+import React from "react";
+
+
+
 
 
 
 
 
 function App() {
+
+
   return (
     <div className="App">
       <Routes>

@@ -417,3 +417,13 @@ align-items: center;
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
 }
+
+/* img {
+    width: 237px;
+    height: 270px;
+} */
+
+.imgsrc{
+    width:350px;
+    height: 270px;
+}
