@@ -7,16 +7,14 @@ import '../Style/Login.css'
 const Header = () =>{
     let navigate = useNavigate();
     
-    const localStoragetokenCheck = localStorage.getItem('refresh-token');
+    const localStoragetokenCheck = localStorage.getItem('refresh-token');       
 
     const Logout = ()=>{
         localStorage.removeItem('refresh-token')
+        localStorage.removeItem('user-name')
         navigate('/')
         alert('로그아웃 되셨습니다')
     }
-
-
-
 
     return(
         
@@ -26,14 +24,13 @@ const Header = () =>{
 
             {!localStoragetokenCheck ?
             <div>
-            <button onClick={()=>{navigate('./Login')}} >로그인</button>
-            <button onClick={()=>{navigate('./Signup')}}>회원가입</button>
+            <button onClick={()=>{navigate('/Login')}} >로그인</button>
+            <button onClick={()=>{navigate('/Signup')}}>회원가입</button>
             </div> 
 
              :
 
             <div>
-            <button onClick={()=>{navigate('./Signup')}}>회원가입</button>
             <button onClick={Logout}>로그아웃</button>
             </div>}
 

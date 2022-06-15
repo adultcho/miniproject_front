@@ -36,18 +36,17 @@ const Post = () => {
     }
   };
 
-
-  //page 로드할 때 axios get 요청
-  React.useEffect(() => {
-    axios
-      .get("http://13.125.151.93/api/poststudy") // back-end server http://13.125.151.93
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((response) => {
-        console.log(response);
-      });
-  }, []);
+  // //page 로드할 때 axios get 요청
+  // React.useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5001/poststudy") // back-end server http://13.125.151.93/api/poststudy, mock http://localhost:5001/poststudy
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((response) => {
+  //       console.log(response);
+  //     });
+  // }, []);
 
   //add button click => input data {key:value}로 불러옴 =>  axios.post로 서버에 전송 => main page로 이동
   const postSubmitHandler = async (e) => {
@@ -68,11 +67,11 @@ const Post = () => {
       }) // back-end server http://13.125.151.93
       .then((response) => {
         console.log(response);
-
       })
       .catch((error) => {
         console.log(error);
       });
+    navigate("/");
   };
 
   return (
