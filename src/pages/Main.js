@@ -10,11 +10,9 @@ const Main = () => {
   let navigate = useNavigate();
 
   React.useEffect(() => {
-
     axios
       .get("http://13.125.151.93/") // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
-        console.log(response)
         setState(response.data);
         console.log(response.data);
       })
@@ -23,22 +21,111 @@ const Main = () => {
       });
   }, []);
 
-  // console.log(typeof(state))
+  const categoryAll = () => {
+    axios
+      .get("http://13.125.151.93/") // back-end server http://13.125.151.93/api/poststudy
+      .then((response) => {
+        setState(response.data);
+        console.log(response.data);
+        
+      })
+      .catch((response) => {
+        console.log(response);
+      });
+  };
+
+  
 
 
 
+  const categoryReact = () => {
+    axios
+      .post(
+        "http://13.125.151.93/",
+        { category: "react" },
+        {
+          headers: { Authorization: localStorage.getItem("refresh-token") },
+        }
+      ) // back-end server http://13.125.151.93
+      .then((response) => {
+        setState(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const categoryNode = () => {
+    axios
+      .post(
+        "http://13.125.151.93/",
+        { category: "node-js" },
+        {
+          headers: { Authorization: localStorage.getItem("refresh-token") },
+        }
+      ) // back-end server http://13.125.151.93
+      .then((response) => {
+        setState(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const categorySpring = () => {
+    axios
+      .post(
+        "http://13.125.151.93/",
+        { category: "spring" },
+        {
+          headers: { Authorization: localStorage.getItem("refresh-token") },
+        }
+      ) // back-end server http://13.125.151.93
+      .then((response) => {
+        setState(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const categoryPython = () => {
+    axios
+      .post(
+        "http://13.125.151.93/",
+        { category: "python" },
+        {
+          headers: { Authorization: localStorage.getItem("refresh-token") },
+        }
+      ) // back-end server http://13.125.151.93
+      .then((response) => {
+        setState(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
-    <>   
-      <Header state ={state}/>
+    <>
+      <Header state={state} />
       <div className="Main_catagoryBar">
         <div className="Main_btn">
-          <button>전체</button>
-          <button>리액트</button>
-          <button>노드</button>
-          <button>스프링</button>
-          <button>파이썬</button>
+          <button id="categoryBtnAll" onClick={categoryAll}>
+            All
+          </button>
+          <button onClick={categoryReact} id="categoryBtnReact" name="react">
+            React
+          </button>
+          <button onClick={categoryNode} id="categoryBtnNode" name="node-js">
+            Node-js
+          </button>
+          <button onClick={categorySpring} id="categoryBtnSpring" name="spring">
+            Spring
+          </button>
+          <button onClick={categoryPython} id="categoryBtnPython" name="python">
+            Python
+          </button>
           <button
+            type="button"
             onClick={() => {
               navigate("/Post");
             }}
