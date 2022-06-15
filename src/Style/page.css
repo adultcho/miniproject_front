@@ -220,7 +220,27 @@
 }
 
 .Detail_btn > div > button {
-  margin-left: 10px;
+  margin-left: 15px;
+  width:70px;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  font-family: 'SuncheonB';
+}
+
+.Detail_btn > div > button:hover{
+  transform: scale(1.20);
+  cursor: pointer;
 }
   
+
+.btn_insert{
+  background-color: #166cea;
+}
+
+.btn_delete{
+  background-color: #ec407a;
+}
 
