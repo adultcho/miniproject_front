@@ -131,7 +131,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   min-width: 100vw;
   min-height: 100vh;
   height: 100%;
@@ -144,7 +144,6 @@
 .detail_category {
   width: 50vw;
   font-size: 50px;
-  margin-top: 120px;
   display: flex;
   justify-content: space-between;
 }
@@ -172,7 +171,6 @@
 .detail_comment {
   border-radius: 20px;
   padding: 10px;
-  margin-top: 30px;
 }
 
 .detail_comment_list {
@@ -180,14 +178,13 @@
   flex-direction: column;
   overflow-x :hidden; 
   overflow-y :scroll; 
-
   width:50vw;
   min-height: 200px;
   max-height: 200px;
   border: 1px solid black;
+  border-radius: 10px;
   background-color: aliceblue;
   padding: 10px;
-  margin-bottom: 40px;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.3);
   gap: 5px;
 }
