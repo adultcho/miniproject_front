@@ -13,12 +13,16 @@ const Detail = () => {
   const userName = localStorage.getItem("user-name");
   const now_user = list.username;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> sungin
   console.log(studyId);
 
   const comment_ref = React.useRef(null);
 
+<<<<<<< HEAD
 
   
   const token = localStorage.getItem("refresh-token");
@@ -51,17 +55,30 @@ const Detail = () => {
 
 
   
+=======
+  const token = localStorage.getItem("refresh-token");
+
+  const detail_del = async () => {
+    await axios
+      .delete("http://13.125.151.93/api/deletestudy/" + studyId, {
+        headers: { Authorization: `${token}` },
+      })
+      .then((res) => {
+        alert("삭제성공");
+        navigate("/");
+      });
+  };
+>>>>>>> sungin
 
   React.useEffect(() => {
     axios
-      .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/api/poststudy
+      .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/
       .then((response) => {
         setList(response.data);
 
         console.log(response);
-        console.log(response.data)
+        console.log(response.data);
         response.data.commentList.reverse();
-
       })
       .catch((response) => {
         console.log(response);
@@ -71,7 +88,10 @@ const Detail = () => {
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> sungin
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
@@ -85,7 +105,7 @@ const Detail = () => {
 
       .then((response) => {
         console.log(response);
-        window.location.reload()
+        window.location.reload();
       })
       .catch((response) => {
         console.log(response);
@@ -122,6 +142,7 @@ const Detail = () => {
         <div className="detail_category">
           <span>category</span>
           <div className="Detail_btn">
+<<<<<<< HEAD
           {userName === now_user ? (
           <div>
             <button>
@@ -135,6 +156,15 @@ const Detail = () => {
           
           </div>
 
+=======
+            {userName === now_user ? (
+              <div>
+                <button>수정</button>
+                <button onClick={detail_del}>삭제</button>
+              </div>
+            ) : null}
+          </div>
+>>>>>>> sungin
         </div>
 
         <div className="detail_title">
@@ -149,6 +179,7 @@ const Detail = () => {
           <h3>Comment List</h3>
           {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
+<<<<<<< HEAD
             {list.commentList && list.commentList.map((list, idx) => (
                 
               <Comment
@@ -159,6 +190,18 @@ const Detail = () => {
                 username={list.username}    
               />
                 ))} 
+=======
+            {list.commentList &&
+              list.commentList.map((list, idx) => (
+                <Comment
+                  key={idx}
+                  commentId={list.commentId}
+                  comment={list.commentContent}
+                  userNickname={list.userNickname}
+                  username={list.username}
+                />
+              ))}
+>>>>>>> sungin
           </div>
         </div>
 
