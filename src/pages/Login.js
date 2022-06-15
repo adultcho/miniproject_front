@@ -1,8 +1,24 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { async } from "@firebase/util";
+import { useParams } from "react-router";
 
 const Login = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   let navigate = useNavigate();
 
   const id_ref = React.useRef(null);
@@ -26,6 +42,39 @@ const Login = () => {
         pw_ref.current.value = "";
       });
   };
+
+
+  const kakao = async() =>{
+
+    
+
+    await axios
+      .get("https://kauth.kakao.com/oauth/authorize?client_id=346b2f15b0bcf829529a506449139680&redirect_uri=http://13.125.151.93/user/kakao/callback&response_type=code") 
+      .then((response) => {
+        console.log(response);
+        
+      })
+      .catch((response) => {
+        console.log(response);
+      });
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
 
   return (
     <div className="Login_container">
@@ -58,7 +107,7 @@ const Login = () => {
             <button onClick={LoginAxios}> 로그인</button>
             <div className="Login_Signup">
               <a href="/Signup">Are you Join ? </a>
-              <a href="https://kauth.kakao.com/oauth/authorize?client_id=346b2f15b0bcf829529a506449139680&redirect_uri=http://localhost:3000/user/kakao/callback&response_type=code" className="kakao">카카오 로그인하기</a>
+              <a href="https://kauth.kakao.com/oauth/authorize?client_id=346b2f15b0bcf829529a506449139680&redirect_uri=http://13.125.151.93/user/kakao/callback&response_type=code" onClick={kakao}>카카오</a>
             </div>
           </div>
         </div>
