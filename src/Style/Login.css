@@ -81,10 +81,17 @@ body{
 .Login_Signup{
     margin-top: 20px;
     text-align: center;
+    display: flex;
+    flex-direction:column;
 }
 
 .Login_Signup > a {
-    text-decoration: none;  
+    text-decoration: none; 
+    margin-top: 15px; 
+}
+
+.kakao {
+    color: #c6a700;
 }
 
 .Login_Signup > a:hover{
@@ -386,4 +393,27 @@ align-items: center;
     border-radius: 20px;
     font-weight: 700;
     font-family: 'SuncheonB';
+}
+
+
+.third-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.Post_container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imagebox{
+    width:237px;
+    height: 270px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 10%);
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
 }
