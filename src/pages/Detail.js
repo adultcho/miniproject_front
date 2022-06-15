@@ -13,49 +13,10 @@ const Detail = () => {
   const userName = localStorage.getItem("user-name");
   const now_user = list.username;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> sungin
   console.log(studyId);
 
   const comment_ref = React.useRef(null);
 
-<<<<<<< HEAD
-
-  
-  const token = localStorage.getItem("refresh-token");
-
-
-
- const detail_del = async() =>{
-  await axios
-  .delete("http://13.125.151.93/api/deletestudy/" + studyId, {
-    headers: { Authorization: `${token}` },
-  })
-  .then((res) => {
-    alert('삭제성공')
-    navigate("/");
-
-    
-  });
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-=======
   const token = localStorage.getItem("refresh-token");
 
   const detail_del = async () => {
@@ -68,7 +29,6 @@ const Detail = () => {
         navigate("/");
       });
   };
->>>>>>> sungin
 
   React.useEffect(() => {
     axios
@@ -88,10 +48,6 @@ const Detail = () => {
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
 
-<<<<<<< HEAD
-
-=======
->>>>>>> sungin
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
@@ -114,27 +70,6 @@ const Detail = () => {
 
   console.log(list.commentList);
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <>
       <Header />
@@ -142,21 +77,6 @@ const Detail = () => {
         <div className="detail_category">
           <span>category</span>
           <div className="Detail_btn">
-<<<<<<< HEAD
-          {userName === now_user ? (
-          <div>
-            <button>
-              수정
-            </button>
-            <button  onClick={detail_del}>
-              삭제
-            </button>
-          </div>
-        ) : null}
-          
-          </div>
-
-=======
             {userName === now_user ? (
               <div>
                 <button>수정</button>
@@ -164,7 +84,6 @@ const Detail = () => {
               </div>
             ) : null}
           </div>
->>>>>>> sungin
         </div>
 
         <div className="detail_title">
@@ -179,18 +98,6 @@ const Detail = () => {
           <h3>Comment List</h3>
           {/* 댓글이 등록될 div */}
           <div className="detail_comment_list">
-<<<<<<< HEAD
-            {list.commentList && list.commentList.map((list, idx) => (
-                
-              <Comment
-                key={idx}
-                commentId = {list.commentId}
-                comment={list.commentContent}
-                userNickname={list.userNickname}
-                username={list.username}    
-              />
-                ))} 
-=======
             {list.commentList &&
               list.commentList.map((list, idx) => (
                 <Comment
@@ -201,7 +108,6 @@ const Detail = () => {
                   username={list.username}
                 />
               ))}
->>>>>>> sungin
           </div>
         </div>
 
