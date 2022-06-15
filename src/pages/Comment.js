@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 const Comment = (props) => {
-  
+
 
   const userName = localStorage.getItem("user-name");
   const now_user = props.username;
@@ -10,14 +10,11 @@ const Comment = (props) => {
 
   const token = localStorage.getItem("refresh-token");
 
-  console.log(props)
 
   // 댓글 수정판!!
   const insert_comment = async () => {
     let New_comment = prompt("댓글을 수정해주세요");
-    console.log(New_comment);
     let put_comment = { commentContent: New_comment };
-    console.log(put_comment);
     await axios
       .put("http://13.125.151.93/api/putcomment/" + props.commentId, put_comment, {
         headers: { Authorization: `${token}` },
