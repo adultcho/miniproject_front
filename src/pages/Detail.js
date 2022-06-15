@@ -3,27 +3,53 @@ import Header from "./Header";
 import axios from "axios";
 import Comment from "./Comment";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Detail = () => {
+  const [list, setList] = React.useState([]);
+  let navigate = useNavigate();
   let { studyId } = useParams();
+
+  const userName = localStorage.getItem("user-name");
+  const now_user = list.username;
+
+
 
   console.log(studyId);
 
   const comment_ref = React.useRef(null);
 
-  const [list, setList] = React.useState([]);
-  
-  // let test; React.useEffect(()=>{ try{ test = await axios.get( URL ) console.log( test ); } catch(e){ console.log( e ); } }, [])
 
-  // let test;
-  // React.useEffect(async () => {
-  //   test = await axios
-  //     .get("http://13.125.151.93/api/getstudy/" + studyId)
-  //     .then((res) => {
-  //       setList(res.data)
-  //     })
-  // }, []);
-  // console.log(test);
+  
+  const token = localStorage.getItem("refresh-token");
+
+
+
+ const detail_del = async() =>{
+  await axios
+  .delete("http://13.125.151.93/api/deletestudy/" + studyId, {
+    headers: { Authorization: `${token}` },
+  })
+  .then((res) => {
+    alert('삭제성공')
+    navigate("/");
+
+    
+  });
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
   React.useEffect(() => {
@@ -45,7 +71,6 @@ const Detail = () => {
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
 
-    // window.location.reload()
 
     const comment_data = {
       commentContent: comment_ref.current.value,
@@ -69,12 +94,47 @@ const Detail = () => {
 
   console.log(list.commentList);
 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <>
       <Header />
       <div className="detail">
         <div className="detail_category">
           <span>category</span>
+          <div className="Detail_btn">
+          {userName === now_user ? (
+          <div>
+            <button>
+              수정
+            </button>
+            <button  onClick={detail_del}>
+              삭제
+            </button>
+          </div>
+        ) : null}
+          
+          </div>
+
         </div>
 
         <div className="detail_title">
@@ -96,16 +156,9 @@ const Detail = () => {
                 commentId = {list.commentId}
                 comment={list.commentContent}
                 userNickname={list.userNickname}
-                username={list.username}
-            
+                username={list.username}    
               />
-              
                 ))} 
-            {/* <Comment 
-            
-            comment={list.commentContent}
-            userNickname={list.userNickname}
-            username={list.username}/> */}
           </div>
         </div>
 

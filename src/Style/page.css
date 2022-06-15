@@ -145,6 +145,8 @@
   width: 50vw;
   font-size: 50px;
   margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .detail_title {
@@ -216,4 +218,9 @@
   width: 50vw;
   height: 50px;
 }
+
+.Detail_btn > div > button {
+  margin-left: 10px;
+}
+  
 
