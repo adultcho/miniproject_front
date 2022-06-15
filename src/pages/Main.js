@@ -20,6 +20,7 @@ const Main = () => {
       .catch((response) => {
         console.log(response);
       });
+
   }, []);
 
   const categoryAll = () => {
@@ -28,7 +29,7 @@ const Main = () => {
       .then((response) => {
         setState(response.data);
         console.log(response.data);
-        
+
       })
       .catch((response) => {
         console.log(response);
@@ -147,6 +148,7 @@ const Main = () => {
             address={state.studyAddress}
             title={state.studyTitle}
             content={state.studyContent}
+            imageUrl={state.imageUrl}
           />
         ))}
         </div>

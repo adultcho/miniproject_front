@@ -439,14 +439,25 @@ input::-webkit-input-placeholder {
   justify-content: space-around;
 }
 
-.imagebox {
-  width: 237px;
-  height: 270px;
-  background-color: #fff;
-  border: none;
-  outline: none;
-  box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 10%);
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 10px;
+.imagebox{
+    width:237px;
+    height: 270px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 10%);
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
 }
+
+/* img {
+    width: 237px;
+    height: 270px;
+} */
+
+.imgsrc{
+    width:350px;
+    height: 270px;
+}
+

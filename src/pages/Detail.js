@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Detail = () => {
   const [list, setList] = React.useState([]);
+
   let navigate = useNavigate();
   let { studyId } = useParams();
 
@@ -85,6 +86,8 @@ const Detail = () => {
         console.log(response);
       });
   }, [studyId]);
+
+
 
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
