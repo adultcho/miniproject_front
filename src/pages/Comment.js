@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 const Comment = (props) => {
-
+  console.log(props)
 
   const userName = localStorage.getItem("user-name");
   const now_user = props.username;
