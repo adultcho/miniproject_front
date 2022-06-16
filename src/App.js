@@ -5,7 +5,6 @@ import Detail from './pages/Detail';
 import Post from './pages/Post';
 import Signup from './pages/Signup';
 import React from "react";
-import './Style/App.css'
 
 
 

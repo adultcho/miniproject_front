@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 const Comment = (props) => {
-  console.log(props);
+  console.log(props)
 
   const userName = localStorage.getItem("user-name");
   const now_user = props.username;
@@ -10,29 +10,28 @@ const Comment = (props) => {
 
   const token = localStorage.getItem("refresh-token");
 
+
   // 댓글 수정판!!
   const insert_comment = async () => {
     let New_comment = prompt("댓글을 수정해주세요");
     let put_comment = { commentContent: New_comment };
     await axios
-      .put(
-        "http://13.125.151.93/api/putcomment/" + props.commentId,
-        put_comment,
-        {
-          headers: { Authorization: `${token}` },
-        }
-      )
+      .put("http://13.125.151.93/api/putcomment/" + props.commentId, put_comment, {
+        headers: { Authorization: `${token}` },
+      })
       .then((response) => {
         console.log(response);
       })
       .catch((err) => {
         console.log(err);
       });
-    if (New_comment === null) {
-      return alert("취소되었습니다.");
-    }
-    alert("수정되었습니다.");
-    window.location.reload();
+      if(New_comment===null){
+        return(
+          alert("취소되었습니다.")
+            );
+        }
+      alert("수정되었습니다.")
+    window.location.reload()
   };
 
   const delete_comment = () => {
@@ -45,7 +44,7 @@ const Comment = (props) => {
       });
 
     alert("삭제되었습니다");
-    window.location.reload();
+    window.location.reload()
   };
 
   return (
@@ -53,7 +52,6 @@ const Comment = (props) => {
       <div className="C_p">
         <p>유저 닉네임 : {props.userNickname}</p>
         <p>유저 이메일 : {props.username}</p>
-        <p>작성 시간 : {props.createdAt}</p>
       </div>
       <div className="C_title">
         {props.comment}
