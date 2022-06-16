@@ -1,12 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../Style/Login.css";
 import Header from "./Header";
 import Card from "./Card";
 import axios from "axios";
 import { RiAddCircleFill } from "react-icons/ri";
 import { SiSpring,SiReact } from "react-icons/si";
-
+import '../Style/App.css'
 const Main = () => {
   const [state, setState] = React.useState([]);
   let navigate = useNavigate();
