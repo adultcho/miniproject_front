@@ -1,25 +1,26 @@
-//cancel 버튼 입력 및 add 버튼 입력 후 main component로 page이동하기 위한 useNavigate 사용,
-//Post 입력 후 서버에 데이터 전성을 위한 axios.post 이용,
-//address, title, content 입력값은 useRef hook을 이용해 from tag에 onSubit eventHandler 사용,
-//category는 input radio 속성으로 onChange eventHandler 사용해 useState hook을 사용해 선택한 값을 axios로 전송
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
-//conponents
 import Header from "./Header";
+import {ref,uploadBytes,getDownloadURL} from "firebase/storage"
+import {storage} from '../firebase'
 
-//style
-import "../Style/page.css";
+
+
+
+
+
 
 const Post = () => {
+  const [imageSrc, setImageSrc] = React.useState('');
   const navigate = useNavigate();
+
 
   //address, title, content
   const address_ref = React.useRef(null);
   const title_ref = React.useRef(null);
   const content_ref = React.useRef(null);
+  const fileInput = React.useRef(null);
 
   //stack category
   const [category, setCategory] = React.useState(null);
@@ -36,28 +37,32 @@ const Post = () => {
     }
   };
 
-  // //page 로드할 때 axios get 요청
-  // React.useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5001/poststudy") // back-end server http://13.125.151.93/api/poststudy, mock http://localhost:5001/poststudy
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((response) => {
-  //       console.log(response);
-  //     });
-  // }, []);
 
-  //add button click => input data {key:value}로 불러옴 =>  axios.post로 서버에 전송 => main page로 이동
   const postSubmitHandler = async (e) => {
     e.preventDefault();
+  };
+
+
+
+  const imageFileFB = async() =>{    
+    // fileInput.current.files 파일 접근할 때
+    const upload_file = await uploadBytes(ref(storage, `images/${fileInput.current.files[0].name}`),
+    fileInput.current.files[0]
+    )
+    console.log(upload_file)        // ref 값을 가져옴
+
+    const file_url = await getDownloadURL(upload_file.ref)
+    console.log(file_url)  
+    fileInput.current = {url:file_url}
 
     const post_data = {
       category,
       studyAddress: address_ref.current.value,
       studyTitle: title_ref.current.value,
       studyContent: content_ref.current.value,
+      imageUrl : fileInput.current?.url
     };
+    console.log(post_data)
 
     const token = localStorage.getItem("refresh-token");
     console.log(token);
@@ -72,7 +77,52 @@ const Post = () => {
         console.log(error);
       });
     navigate("/");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+}
+
+
+
+
+// 이미지 미리보기 
+const encodeFileToBase64 = (fileBlob) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(fileBlob);
+  return new Promise((resolve) => {
+  reader.onload = () => {
+      setImageSrc(reader.result);
+      resolve();
   };
+  });
+};
+
+
+
+
+
+
+
+
 
   return (
     <>
@@ -137,8 +187,8 @@ const Post = () => {
             <textarea className="Post_input" ref={content_ref} />
 
             <div>
-              <div className="imagebox">사진상자</div>
-              <div><input type="file"/></div>
+              <div className="imagebox">{imageSrc && <img src={imageSrc} alt="preview-img"/>}</div>
+              <div><input type="file" ref={fileInput}  onChange={(e) => {encodeFileToBase64(e.target.files[0]);}} /></div>
             </div>
 
 
@@ -152,7 +202,7 @@ const Post = () => {
           >
             Cancel
           </button>
-          <button type="submit" className="post_btn_add">
+          <button type="submit" className="post_btn_add" onClick={imageFileFB}>
             Add
           </button>
         </div>

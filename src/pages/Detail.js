@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Detail = () => {
   const [list, setList] = React.useState([]);
+
   let navigate = useNavigate();
   let { studyId } = useParams();
 
@@ -86,6 +87,8 @@ const Detail = () => {
       });
   }, [studyId]);
 
+
+
   const commentSubmitHandler = async (e) => {
     e.preventDefault();
 
@@ -153,6 +156,7 @@ const Detail = () => {
           </div>
 
         </div>
+        
 
         <div className="detail_title">
           <p className="title">{list.studyTitle}</p>
