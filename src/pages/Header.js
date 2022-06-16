@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 const Header = () =>{
     let navigate = useNavigate();
     
-    const localStoragetokenCheck = localStorage.getItem('refresh-token');       
+    const localStoragetokenCheck = localStorage.getItem('refresh-token');   
+    // const nickname = localStorage.getItem('user-name')    
 
     const Logout = ()=>{
         localStorage.removeItem('refresh-token')
@@ -35,6 +36,7 @@ const Header = () =>{
              :
 
             <div>
+
             <button onClick={Logout}>로그아웃</button>
             </div>}
 
