@@ -78,12 +78,12 @@ const Detail = () => {
       .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
         setList(response.data);
-        console.log(response);
+        // console.log(response);
         response.data.commentList.reverse();
 
       })
       .catch((response) => {
-        console.log(response);
+        // console.log(response);
       });
   }, [studyId]);
 
@@ -96,7 +96,7 @@ const Detail = () => {
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
-    console.log(comment_data);
+    // console.log(comment_data);
     const token = localStorage.getItem("refresh-token");
 
     await axios
@@ -105,11 +105,11 @@ const Detail = () => {
       }) // back-end server http://13.125.151.93
 
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         window.location.reload()
       })
       .catch((response) => {
-        console.log(response);
+        // console.log(response);
       });
   };
 
@@ -179,7 +179,7 @@ const Detail = () => {
                 comment={list.commentContent}
                 userNickname={list.userNickname}
                 username={list.username}    
-                creatAt={list.createdAt}
+                createAt={list.createdAt}
               />
                 ))} 
           </div>

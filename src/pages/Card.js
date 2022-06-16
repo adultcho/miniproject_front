@@ -12,7 +12,7 @@ const Card = (props) => {
   const cardClickHandler = () => {
     navigate(detail_url);
   };
-  console.log(props);
+  // console.log(props);
 
   return (
     
@@ -20,7 +20,7 @@ const Card = (props) => {
       <div  onClick={cardClickHandler} className="Main_Card">
         <div className="Main_Card_title">{props.category}</div>
         <div className="Main_title">{props.title}</div>
-        <div className="Main_imgBox"><img src={props.imageUrl} className="imgsrc"/></div>
+        <div className="Main_imgBox"><img src={props.imageUrl} alt='card_img' className="imgsrc"/></div>
       </div>
     
   );

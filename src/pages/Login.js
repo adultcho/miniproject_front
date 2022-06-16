@@ -1,24 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { async } from "@firebase/util";
-import { useParams } from "react-router";
 
 const Login = () => {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   let navigate = useNavigate();
 
   const id_ref = React.useRef(null);
@@ -42,13 +26,6 @@ const Login = () => {
         pw_ref.current.value = "";
       });
   };
-
-
-
-
-
-
-
 
   return (
     <div className="Login_container">

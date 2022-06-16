@@ -13,9 +13,15 @@ body {
   background: lavender;
   box-sizing: border-box;
   margin: 0;
-  background-image: url('https://img.freepik.com/free-photo/pink-and-purple-blank-paper-texture-background-hd_199726-7240.jpg');
+
+  background-image: url("https://img.freepik.com/free-photo/pink-and-purple-blank-paper-texture-background-hd_199726-7240.jpg");
   background-size: cover;
 }
+
+input {
+    border: none;
+}
+
 
 /* 로그인 페이지 스타일 시트 (Login.js) */
 .Login_container {
@@ -236,15 +242,15 @@ input::-webkit-input-placeholder {
   right: 20px;
   width: 100px;
   height: 100px;
-  color: #f48fb1;
+
+  color: #ff94c2;
   cursor: pointer;
   transition: transform 0.3s, color 0.3s ease-in-out;
-
- 
 }
 .Main_post_btn:hover {
   transform: rotateZ(180deg);
-  color: #9c27b0;
+  color: #6a1b9a;
+
 }
 .Main_post_btn:focus {
   background-color: brown;
@@ -265,8 +271,9 @@ input::-webkit-input-placeholder {
   background-color: #7e57c2;
   cursor: pointer;
 }
-.Main_btn > button:focus{
-    background-color: #ff94c2;
+
+.Main_btn > button:focus {
+  background-color: #ff94c2;
 }
 .Card_container {
   display: grid;
@@ -291,7 +298,6 @@ input::-webkit-input-placeholder {
   transform: scale(1.08);
   background-color: #ff94c2;
   color: snow;
-  
 }
 
 .Main_Catagory {
@@ -326,6 +332,36 @@ input::-webkit-input-placeholder {
   /* border: 1px solid black; */
 }
 
+
+.footer-container {
+  margin-top: 100px;
+  height: 300px;
+  background-color: transparent;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+.icons {
+  font-size: 50px;
+  margin-left: 20px;
+}
+.footer-first {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  top: 20px;
+}
+.text-container {
+  display: flex;
+}
+.text-container > p {
+  margin-left: 110px;
+  position: relative;
+  left: 750px;
+}
+.name-container {
+  text-align: center;
+}
+
 .nav {
   width: 100%;
   height: 70px;
@@ -336,9 +372,9 @@ input::-webkit-input-placeholder {
   top: 0;
   left: 0;
   background-color: rgba(230, 230, 250, 0.5);
-  box-shadow:  1px 3px 5px rgb(0 0 0 / 10%);
+
+  box-shadow: 1px 3px 5px rgb(0 0 0 / 10%);
   backdrop-filter: blur(8px);
-  
 }
 
 .Header_btn > div > button {
@@ -449,30 +485,54 @@ input::-webkit-input-placeholder {
   justify-content: space-around;
 }
 
-.imagebox{
-    width:237px;
-    height: 270px;
-    background-color: #fff;
-    border: none;
-    outline: none;
-    box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 10%);
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 10px;
+.img_input_area{
+    height: 20px;
+    margin-bottom: 10px;
 }
 
-/* img {
-    width: 237px;
-    height: 270px;
-} */
+.file_input_btn{
+    margin-right: 20px;
+    width: 100px;
+    height: 50px;
+    font-family: "SuncheonB";
+    font-weight: 700;
+    border-radius: 10px;
+    color: white;
+    background-color: #ff94c2;
+    border: 2px solid #e1bee7;
+    font-size: 15px;
+    cursor:pointer;
+    margin-left: 25px;
+    transition: all 0.3s ease-in-out;
+}
+.file_input_btn:hover {
+  background-color: #6a1b9a;
+}
 
-.imgsrc{
-    width:350px;
-    height: 270px;
+.imagebox {
+  width: 237px;
+  height: 270px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  box-shadow: 2px 1px 10px 1px rgb(0 0 0 / 10%);
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.img{
+  width: 237px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.imgsrc {
+  width: 350px;
+  height: 270px;
 }
 
 /* 원래 page.css 내용 */
-
 
 .post {
   display: flex;
@@ -517,10 +577,6 @@ input::-webkit-input-placeholder {
   height: 50px;
 }
 
-.post_content textarea {
-  height: 250px;
-}
-
 .post_btn {
   display: flex;
   gap: 10px;
@@ -548,14 +604,12 @@ input::-webkit-input-placeholder {
   background-color: brown;
   color: lavenderblush;
   font-size: 19px;
-  font-family: "SuncheonB";
 }
 
 .post_btn_add:hover {
   background-color: #3f51b5;
   color: lavenderblush;
   font-size: 19px;
-  font-family: "SuncheonB";
 }
 
 .post_btn > button:active {
@@ -627,8 +681,6 @@ input::-webkit-input-placeholder {
   justify-content: space-between;
 }
 
-
-
 .detail_title {
   display: flex;
   justify-content: flex-start;
@@ -657,9 +709,9 @@ input::-webkit-input-placeholder {
 .detail_comment_list {
   display: flex;
   flex-direction: column;
-  overflow-x :hidden; 
-  overflow-y :scroll; 
-  width:50vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 50vw;
   min-height: 200px;
   max-height: 200px;
   border: 1px solid black;
@@ -671,19 +723,20 @@ input::-webkit-input-placeholder {
 }
 
 
-.detail_comment_list_information{
+.detail_comment_list_information {
   display: flex;
-  gap:10px;
+  gap: 10px;
 }
 
-.detail_comment_list_information span{
+.detail_comment_list_information span {
   font-size: 15px;
   color: olive;
 }
 
-.detail_comment_list_modify{
+
+.detail_comment_list_modify {
   display: flex;
-  gap:10px;
+  gap: 10px;
 }
 
 .detail_comment_input {
@@ -699,7 +752,7 @@ input::-webkit-input-placeholder {
 
 .Detail_btn > div > button {
   margin-left: 15px;
-  width:70px;
+  width: 70px;
   height: 30px;
   font-size: 16px;
   border: none;
@@ -735,10 +788,10 @@ input::-webkit-input-placeholder {
 }
 
 .footer-first{
+    position: relative;
   display: flex;
   justify-content: center;
   padding: 20px;
-  position: relative;
   top:20px;
 
 }
@@ -750,7 +803,7 @@ input::-webkit-input-placeholder {
 .text-container > p {
   margin-left: 110px;
   position: relative;
-  left:670px
+  left:560px;
 }
 
 .name-container{
@@ -759,4 +812,17 @@ input::-webkit-input-placeholder {
 
 .address{
   font-size: 35px;
+}
+
+.Detail_btn > div > button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.btn_insert {
+  background-color: #166cea;
+}
+
+.btn_delete {
+  background-color: #ec407a;
 }
