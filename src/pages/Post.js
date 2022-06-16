@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
-import "../Style/page.css";
 import {ref,uploadBytes,getDownloadURL} from "firebase/storage"
 import {storage} from '../firebase'
 

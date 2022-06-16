@@ -141,6 +141,7 @@ const Detail = () => {
       <div className="detail">
         <div className="detail_category">
           <span>{list.category}</span>
+          <span className="address">{list.studyAddress}</span>
           <div className="Detail_btn">
           {userName === now_user ? (
           <div>
@@ -156,6 +157,7 @@ const Detail = () => {
           </div>
 
         </div>
+        
 
         <div className="detail_title">
           <p className="title">{list.studyTitle}</p>
@@ -177,6 +179,7 @@ const Detail = () => {
                 comment={list.commentContent}
                 userNickname={list.userNickname}
                 username={list.username}    
+                creatAt={list.createdAt}
               />
                 ))} 
           </div>
