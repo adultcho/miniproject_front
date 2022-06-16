@@ -1,0 +1,71 @@
+/* input file의 선택된 사진없음 지우는 코드 */
+ .button3 {display: flex; justify-content: center; position: relative; top:100px; flex-direction: column; align-items: center;}
+ label {cursor: pointer;font-size: 1em;}
+ #chooseFile {visibility: hidden; font-weight: 700;}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin:0px;
+}
+
+.Acontainer{
+    position: relative;
+    width:1000px;
+    height: 100vh;
+    background-color: #757575;
+}
+h1{
+    margin: 0px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.picture{
+    border:2px solid;
+    margin-top: 40px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture > p {
+
+    font-weight: 700;
+}
+
+.Comment{
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px ;
+    margin-top: 20px;
+    background-color:slategrey;
+}
+
+
+.Addbtn{
+    margin: 20px;
+    border-radius: 20px;
+    width:700px;
+    height: 50px;
+    font-weight: 700;
+    position: relative;
+    top:150px;
+}
+
+.Addbtn:hover{
+    background-color:#00796b;
+    cursor: pointer;
+    transform:scale(1.1);
+}
+
+.preview-img{
+    width:500px;
+    height: 300px;
+    background-size:cover;
+}

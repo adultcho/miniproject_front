@@ -1,0 +1,55 @@
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #bdbdbd; 
+}
+
+.Mcontainer{
+    position: relative;
+    width:1000px;
+    height: 100%;
+    background-color: #eee;
+}
+
+.nav{
+    width:1000px;
+    height: 80px;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav > h1{
+    position: relative;
+    left:25px;
+    padding:20px;
+}
+
+.icon-first{
+    font-size: 30px;
+    margin: 20px 40px 0px 0px;
+    position: relative;
+    left:330px;
+}
+
+.icon-second{
+    font-size: 30px;
+    margin: 20px 40px 0px 0px;
+}
+
+.icon-first:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.icon-second:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.Card-option{
+    margin-top: 20px;
+}
+
