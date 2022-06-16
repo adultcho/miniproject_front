@@ -225,6 +225,8 @@ input::-webkit-input-placeholder {
   padding: 10px 0px;
 }
 
+
+
 .Main_post_btn {
   position: fixed;
   display: flex;
@@ -238,12 +240,7 @@ input::-webkit-input-placeholder {
   cursor: pointer;
   transition: transform 0.3s, color 0.3s ease-in-out;
 
-  /* &:hover {
-    transform: rotateZ(180deg);
-    color: saddlebrown;
-  }
-  &:active {
-    color: darkslategray; */
+
 }
 .Main_post_btn:hover {
   transform: rotateZ(180deg);
@@ -265,7 +262,7 @@ input::-webkit-input-placeholder {
 }
 
 .Main_btn > button:hover {
-  background-color: #7e57c2;
+  color:#004d40;
   cursor: pointer;
 }
 .Card_container {
@@ -461,3 +458,36 @@ input::-webkit-input-placeholder {
     height: 270px;
 }
 
+.footer-container{
+  margin-top: 100px;
+  height: 300px;
+  background-color: #d1c4e9;
+}
+
+.icons{
+ font-size: 50px;
+ margin-left: 20px;
+}
+
+.footer-first{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  top:20px;
+
+}
+
+.text-container{
+  display: flex;
+}
+
+.text-container > p {
+  margin-left: 110px;
+  position: relative;
+  left:750px
+}
+
+.name-container{
+  text-align: center;
+}

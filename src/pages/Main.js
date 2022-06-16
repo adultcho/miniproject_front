@@ -5,6 +5,7 @@ import Header from "./Header";
 import Card from "./Card";
 import axios from "axios";
 import { RiAddCircleFill } from "react-icons/ri";
+import { SiSpring,SiReact } from "react-icons/si";
 
 const Main = () => {
   const [state, setState] = React.useState([]);
@@ -154,6 +155,19 @@ const Main = () => {
         </div>
       
       </div>
+
+
+      <footer className="footer-container">
+        <div className="footer-first"> <SiReact className="icons"></SiReact> <span className="icons">🤝</span>  <SiSpring className="icons"></SiSpring></div>
+        <div className="text-container">
+          <p>react</p>
+          <p>spring</p>
+          </div>
+          <div className="name-container">
+          <p>👦 Front-End : 정인성 , 조성인</p>
+          <p>👱 Back-End : 김정훈 , 박세열 , 강현구</p> 
+          </div>
+      </footer>
       
     </>
   );
