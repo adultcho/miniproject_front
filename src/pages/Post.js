@@ -2,20 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
-import "../Style/page.css";
-import {ref,uploadBytes,getDownloadURL} from "firebase/storage"
-import {storage} from '../firebase'
-
-
-
-
-
-
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../firebase";
 
 const Post = () => {
-  const [imageSrc, setImageSrc] = React.useState('');
+  const [imageSrc, setImageSrc] = React.useState("");
   const navigate = useNavigate();
-
 
   //address, title, content
   const address_ref = React.useRef(null);
@@ -38,32 +30,30 @@ const Post = () => {
     }
   };
 
-
   const postSubmitHandler = async (e) => {
     e.preventDefault();
   };
 
-
-
-  const imageFileFB = async() =>{    
+  const imageFileFB = async () => {
     // fileInput.current.files 파일 접근할 때
-    const upload_file = await uploadBytes(ref(storage, `images/${fileInput.current.files[0].name}`),
-    fileInput.current.files[0]
-    )
-    console.log(upload_file)        // ref 값을 가져옴
+    const upload_file = await uploadBytes(
+      ref(storage, `images/${fileInput.current.files[0].name}`),
+      fileInput.current.files[0]
+    );
+    console.log(upload_file); // ref 값을 가져옴
 
-    const file_url = await getDownloadURL(upload_file.ref)
-    console.log(file_url)  
-    fileInput.current = {url:file_url}
+    const file_url = await getDownloadURL(upload_file.ref);
+    console.log(file_url);
+    fileInput.current = { url: file_url };
 
     const post_data = {
       category,
       studyAddress: address_ref.current.value,
       studyTitle: title_ref.current.value,
       studyContent: content_ref.current.value,
-      imageUrl : fileInput.current?.url
+      imageUrl: fileInput.current?.url,
     };
-    console.log(post_data)
+    console.log(post_data);
 
     const token = localStorage.getItem("refresh-token");
     console.log(token);
@@ -78,52 +68,19 @@ const Post = () => {
         console.log(error);
       });
     navigate("/");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-}
-
-
-
-
-// 이미지 미리보기 
-const encodeFileToBase64 = (fileBlob) => {
-  const reader = new FileReader();
-  reader.readAsDataURL(fileBlob);
-  return new Promise((resolve) => {
-  reader.onload = () => {
-      setImageSrc(reader.result);
-      resolve();
   };
-  });
-};
 
-
-
-
-
-
-
-
+  // 이미지 미리보기
+  const encodeFileToBase64 = (fileBlob) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(fileBlob);
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        setImageSrc(reader.result);
+        resolve();
+      };
+    });
+  };
 
   return (
     <>
@@ -179,22 +136,37 @@ const encodeFileToBase64 = (fileBlob) => {
 
         <div className="post_content">
           <div className="Post_container">
-          <h1>Content</h1>
-          <h1> image</h1>
+            <h1>Content</h1>
+            <h1> image</h1>
           </div>
 
-        <div className="third-container">
-          
+          <div className="third-container">
             <textarea className="Post_input" ref={content_ref} />
-
-            <div>
-              <div className="imagebox">{imageSrc && <img src={imageSrc} alt="preview-img"/>}</div>
-              <div><input type="file" ref={fileInput}  onChange={(e) => {encodeFileToBase64(e.target.files[0]);}} /></div>
+            <div className="imagebox">
+                {imageSrc && <img src={imageSrc} alt="preview-img" />}
+              </div>
             </div>
-
-
+            <input
+            type="text"
+            htmlFor="input-file"
+            placeholder="이미지를 선택하세요"
+            
+            style={{
+              border: "2px solid pink",
+              borderRadius: "10px",
+            }}
+            disabled
+          />
+                <input
+                  type="file"
+                  id="input-file"
+                  ref={fileInput}
+                  onChange={(e) => {
+                    encodeFileToBase64(e.target.files[0]);
+                  }}
+                />
           </div>
-        </div>
+        
         <div className="post_btn">
           <button
             type="button"
