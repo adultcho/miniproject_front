@@ -2,8 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
+<<<<<<< HEAD
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase";
+=======
+import {ref,uploadBytes,getDownloadURL} from "firebase/storage"
+import {storage} from '../firebase'
+
+
+
+
+
+
+>>>>>>> 30674621b9a9184d3d7bbf89771f01c648f290ff
 
 const Post = () => {
   const [imageSrc, setImageSrc] = React.useState("");

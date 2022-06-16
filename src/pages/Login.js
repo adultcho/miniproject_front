@@ -27,6 +27,7 @@ const Login = () => {
       });
   };
 
+<<<<<<< HEAD
   const kakao = async () => {
     await axios
       .get(
@@ -39,6 +40,14 @@ const Login = () => {
         console.log(response);
       });
   };
+=======
+
+
+
+
+
+
+>>>>>>> 30674621b9a9184d3d7bbf89771f01c648f290ff
 
   return (
     <div className="Login_container">
@@ -71,12 +80,15 @@ const Login = () => {
             <button onClick={LoginAxios}> 로그인</button>
             <div className="Login_Signup">
               <a href="/Signup">Are you Join ? </a>
+<<<<<<< HEAD
               <a
                 href="https://kauth.kakao.com/oauth/authorize?client_id=346b2f15b0bcf829529a506449139680&redirect_uri=http://13.125.151.93/user/kakao/callback&response_type=code"
                 onClick={kakao}
               >
                 카카오
               </a>
+=======
+>>>>>>> 30674621b9a9184d3d7bbf89771f01c648f290ff
             </div>
           </div>
         </div>

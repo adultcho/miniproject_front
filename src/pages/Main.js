@@ -4,8 +4,13 @@ import Header from "./Header";
 import Card from "./Card";
 import axios from "axios";
 import { RiAddCircleFill } from "react-icons/ri";
+<<<<<<< HEAD
 import '../Style/App.css'
 
+=======
+import { SiSpring,SiReact } from "react-icons/si";
+import '../Style/App.css'
+>>>>>>> 30674621b9a9184d3d7bbf89771f01c648f290ff
 const Main = () => {
   const [state, setState] = React.useState([]);
   let navigate = useNavigate();
@@ -169,6 +174,23 @@ const Main = () => {
           ))}
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+
+      <footer className="footer-container">
+        <div className="footer-first"> <SiReact className="icons"></SiReact> <span className="icons">🤝</span>  <SiSpring className="icons"></SiSpring></div>
+        <div className="text-container">
+          <p>react</p>
+          <p>spring</p>
+          </div>
+          <div className="name-container">
+          <p>👦 Front-End : 정인성 , 조성인</p>
+          <p>👱 Back-End : 김정훈 , 박세열 , 강현구</p> 
+          </div>
+      </footer>
+      
+>>>>>>> 30674621b9a9184d3d7bbf89771f01c648f290ff
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 
 const Header = () => {
   let navigate = useNavigate();
@@ -43,6 +44,44 @@ const Header = () => {
           </div>
         ) : (
           <div>
+=======
+
+
+
+const Header = () =>{
+    let navigate = useNavigate();
+    
+    const localStoragetokenCheck = localStorage.getItem('refresh-token');   
+    // const nickname = localStorage.getItem('user-name')    
+
+    const Logout = ()=>{
+        localStorage.removeItem('refresh-token')
+        localStorage.removeItem('user-name')
+        navigate('/')
+        alert('로그아웃 되셨습니다')
+    }
+
+    const moveToHome = () => {
+        navigate('/');
+    }
+
+    return(
+        
+        <div className="nav">
+            <h1 className="header_title" onClick={moveToHome}> 모이소<span>개발자 모이소~</span> </h1>
+            <div className="Header_btn">
+
+            {!localStoragetokenCheck ?
+            <div>
+            <button onClick={()=>{navigate('/Login')}} >로그인</button>
+            <button onClick={()=>{navigate('/Signup')}}>회원가입</button>
+            </div> 
+
+             :
+
+            <div>
+
+>>>>>>> 30674621b9a9184d3d7bbf89771f01c648f290ff
             <button onClick={Logout}>로그아웃</button>
           </div>
         )}
