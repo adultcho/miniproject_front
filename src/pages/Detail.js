@@ -78,12 +78,12 @@ const Detail = () => {
       .get("http://13.125.151.93/api/getstudy/" + studyId) // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
         setList(response.data);
-        console.log(response);
+        // console.log(response);
         response.data.commentList.reverse();
 
       })
       .catch((response) => {
-        console.log(response);
+        // console.log(response);
       });
   }, [studyId]);
 
@@ -96,7 +96,7 @@ const Detail = () => {
     const comment_data = {
       commentContent: comment_ref.current.value,
     };
-    console.log(comment_data);
+    // console.log(comment_data);
     const token = localStorage.getItem("refresh-token");
 
     await axios
@@ -105,11 +105,11 @@ const Detail = () => {
       }) // back-end server http://13.125.151.93
 
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         window.location.reload()
       })
       .catch((response) => {
-        console.log(response);
+        // console.log(response);
       });
   };
 
@@ -141,6 +141,7 @@ const Detail = () => {
       <div className="detail">
         <div className="detail_category">
           <span>{list.category}</span>
+          <span className="address">{list.studyAddress}</span>
           <div className="Detail_btn">
           {userName === now_user ? (
           <div>
@@ -178,6 +179,7 @@ const Detail = () => {
                 comment={list.commentContent}
                 userNickname={list.userNickname}
                 username={list.username}    
+                createAt={list.createdAt}
               />
                 ))} 
           </div>

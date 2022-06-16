@@ -13,6 +13,7 @@ body {
   background: lavender;
   box-sizing: border-box;
   margin: 0;
+
   background-image: url("https://img.freepik.com/free-photo/pink-and-purple-blank-paper-texture-background-hd_199726-7240.jpg");
   background-size: cover;
 }
@@ -20,6 +21,7 @@ body {
 input {
     border: none;
 }
+
 
 /* 로그인 페이지 스타일 시트 (Login.js) */
 .Login_container {
@@ -240,6 +242,7 @@ input::-webkit-input-placeholder {
   right: 20px;
   width: 100px;
   height: 100px;
+
   color: #ff94c2;
   cursor: pointer;
   transition: transform 0.3s, color 0.3s ease-in-out;
@@ -247,6 +250,7 @@ input::-webkit-input-placeholder {
 .Main_post_btn:hover {
   transform: rotateZ(180deg);
   color: #6a1b9a;
+
 }
 .Main_post_btn:focus {
   background-color: brown;
@@ -267,6 +271,7 @@ input::-webkit-input-placeholder {
   background-color: #7e57c2;
   cursor: pointer;
 }
+
 .Main_btn > button:focus {
   background-color: #ff94c2;
 }
@@ -318,6 +323,7 @@ input::-webkit-input-placeholder {
   border-radius: 10px;
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-size: cover;
 }
 
 .Main_title {
@@ -325,6 +331,7 @@ input::-webkit-input-placeholder {
   margin: 20px;
   /* border: 1px solid black; */
 }
+
 
 .footer-container {
   margin-top: 100px;
@@ -365,6 +372,7 @@ input::-webkit-input-placeholder {
   top: 0;
   left: 0;
   background-color: rgba(230, 230, 250, 0.5);
+
   box-shadow: 1px 3px 5px rgb(0 0 0 / 10%);
   backdrop-filter: blur(8px);
 }
@@ -476,6 +484,7 @@ input::-webkit-input-placeholder {
   display: flex;
   justify-content: space-around;
 }
+
 .img_input_area{
     height: 20px;
     margin-bottom: 10px;
@@ -517,11 +526,6 @@ input::-webkit-input-placeholder {
   object-fit: cover;
   border-radius: 10px;
 }
-
-/* img {
-      width: 237px;
-      height: 270px;
-  } */
 
 .imgsrc {
   width: 350px;
@@ -593,6 +597,7 @@ input::-webkit-input-placeholder {
   border: none;
   outline: none;
   box-shadow: 2px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  font-family: "SuncheonB";
 }
 
 .post_btn_cancel:hover {
@@ -639,6 +644,7 @@ input::-webkit-input-placeholder {
   height: 50px;
   font-size: 17px;
   font-weight: bold;
+  font-family: "SuncheonB";
 }
 
 .detail_comment_button:hover {
@@ -716,6 +722,7 @@ input::-webkit-input-placeholder {
   gap: 5px;
 }
 
+
 .detail_comment_list_information {
   display: flex;
   gap: 10px;
@@ -725,6 +732,7 @@ input::-webkit-input-placeholder {
   font-size: 15px;
   color: olive;
 }
+
 
 .detail_comment_list_modify {
   display: flex;
@@ -750,7 +758,60 @@ input::-webkit-input-placeholder {
   border: none;
   border-radius: 20px;
   font-weight: 700;
-  font-family: "SuncheonB";
+  font-family: 'SuncheonB';
+}
+
+.Detail_btn > div > button:hover{
+  transform: scale(1.20);
+  cursor: pointer;
+}
+  
+
+.btn_insert{
+  background-color: #166cea;
+}
+
+.btn_delete{
+  background-color: #ec407a;
+}
+
+.footer-container{
+  margin-top: 100px;
+  height: 300px;
+  background-color: transparent;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) )
+}
+
+.icons{
+ font-size: 50px;
+ margin-left: 20px;
+}
+
+.footer-first{
+    position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  top:20px;
+
+}
+
+.text-container{
+  display: flex;
+}
+
+.text-container > p {
+  margin-left: 110px;
+  position: relative;
+  left:560px;
+}
+
+.name-container{
+  text-align: center;
+}
+
+.address{
+  font-size: 35px;
 }
 
 .Detail_btn > div > button:hover {

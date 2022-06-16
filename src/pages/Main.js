@@ -15,10 +15,10 @@ const Main = () => {
       .get("http://13.125.151.93/") // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
         setState(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((response) => {
-        console.log(response);
+        // console.log(response);
       });
 
   }, []);
@@ -28,11 +28,11 @@ const Main = () => {
       .get("http://13.125.151.93/") // back-end server http://13.125.151.93/api/poststudy
       .then((response) => {
         setState(response.data);
-        console.log(response.data);
+        // console.log(response.data);
 
       })
       .catch((response) => {
-        console.log(response);
+        // console.log(response);
       });
   };
 
@@ -53,7 +53,7 @@ const Main = () => {
         setState(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 
@@ -70,7 +70,7 @@ const Main = () => {
         setState(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
   const categorySpring = () => {
@@ -86,7 +86,7 @@ const Main = () => {
         setState(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
   const categoryPython = () => {
@@ -102,7 +102,7 @@ const Main = () => {
         setState(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 

@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 const Comment = (props) => {
-  console.log(props)
+  // console.log(props)
 
   const userName = localStorage.getItem("user-name");
   const now_user = props.username;
@@ -20,10 +20,10 @@ const Comment = (props) => {
         headers: { Authorization: `${token}` },
       })
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
       if(New_comment===null){
         return(
@@ -40,7 +40,7 @@ const Comment = (props) => {
         headers: { Authorization: `${token}` },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       });
 
     alert("삭제되었습니다");
@@ -52,6 +52,7 @@ const Comment = (props) => {
       <div className="C_p">
         <p>유저 닉네임 : {props.userNickname}</p>
         <p>유저 이메일 : {props.username}</p>
+        <p>등록일 : {props.createAt}</p>
       </div>
       <div className="C_title">
         {props.comment}

@@ -5,6 +5,7 @@ import Header from "./Header";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase";
 
+
 const Post = () => {
   const [imageSrc, setImageSrc] = React.useState("");
   const navigate = useNavigate();
@@ -40,10 +41,10 @@ const Post = () => {
       ref(storage, `images/${fileInput.current.files[0].name}`),
       fileInput.current.files[0]
     );
-    console.log(upload_file); // ref 값을 가져옴
+    // console.log(upload_file); // ref 값을 가져옴
 
     const file_url = await getDownloadURL(upload_file.ref);
-    console.log(file_url);
+    // console.log(file_url);
     fileInput.current = { url: file_url };
 
     const post_data = {
@@ -53,19 +54,19 @@ const Post = () => {
       studyContent: content_ref.current.value,
       imageUrl: fileInput.current?.url,
     };
-    console.log(post_data);
+    // console.log(post_data);
 
     const token = localStorage.getItem("refresh-token");
-    console.log(token);
+    // console.log(token);
     await axios
       .post("http://13.125.151.93/api/poststudy", post_data, {
         headers: { Authorization: `${token}` },
       }) // back-end server http://13.125.151.93
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
     navigate("/");
   };

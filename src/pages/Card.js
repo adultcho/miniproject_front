@@ -12,7 +12,7 @@ const Card = (props) => {
   const cardClickHandler = () => {
     navigate(detail_url);
   };
-  console.log(props);
+  // console.log(props);
 
   return (
     
