@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+![image](https://user-images.githubusercontent.com/87432361/174004392-cf6f84d0-02bd-45fd-89b4-9d0c40829524.png)
+![image](https://user-images.githubusercontent.com/87432361/174004473-25bdcc93-aa6d-43f7-8b09-5872d1ba3891.png)
+![image](https://user-images.githubusercontent.com/87432361/174004525-7b435b94-43b6-48a4-ad84-48e180486ef1.png)
+![image](https://user-images.githubusercontent.com/87432361/174004728-a9877a52-138f-4914-a2fd-9bd6efcc8993.png)
+# 모이소 프로젝트 소개 React && Spring
+개발에 관심있는 사람들을 대상으로 한 스터디 모집 사이트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 기능 구현
+- 로그인 회원가입 
+- 스터디 게시글 작성 삭제 수정 
+- 스터디 안 세부 페이지 댓글 작성 삭제 수정
+- 카테고리 별 스터디 게시글 나열
+- 자신이 작성한 게시글 과 댓글이 아닐시 삭제 수정 버튼 생성 X
+- 게시글 작성 이미지 파이어 베이스 , 스토리지 이용하여 이미지 url 뽑아서 서버로 전송
+- axios GET 을 제외한 모든 메쏘드에 header
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 프로젝트 환경 Front-End 
+- React / Firebase / Spring과 연결 ( Axios) / 서버 값 관리 : useState 이용

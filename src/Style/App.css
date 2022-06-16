@@ -312,12 +312,12 @@ input::-webkit-input-placeholder {
   left: 20px;
 }
 .Main_imgBox > img {
-    width: 300px;
+  width: 300px;
   height: 200px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  
+  background-size: cover;
 }
 
 .Main_title {
@@ -627,6 +627,8 @@ input::-webkit-input-placeholder {
   justify-content: space-between;
 }
 
+
+
 .detail_title {
   display: flex;
   justify-content: flex-start;
@@ -748,9 +750,13 @@ input::-webkit-input-placeholder {
 .text-container > p {
   margin-left: 110px;
   position: relative;
-  left:750px
+  left:670px
 }
 
 .name-container{
   text-align: center;
+}
+
+.address{
+  font-size: 35px;
 }
