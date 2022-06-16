@@ -52,6 +52,7 @@ const Comment = (props) => {
       <div className="C_p">
         <p>유저 닉네임 : {props.userNickname}</p>
         <p>유저 이메일 : {props.username}</p>
+        <p>등록일 : {props.creatAt}</p>
       </div>
       <div className="C_title">
         {props.comment}
